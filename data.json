@@ -1,0 +1,150 @@
+{
+  "lastUpdated": "2026-01-28T17:05:00.000Z",
+  "columns": [
+    {
+      "id": "ideas",
+      "title": "💡 Ideas",
+      "cards": [
+        {
+          "id": "idea-001",
+          "title": "AI Model Optimization for One Development",
+          "description": "Get One Development mentioned in AI responses about top Dubai developers",
+          "priority": "high",
+          "tags": ["work", "ai"],
+          "agent": "bumble"
+        }
+      ]
+    },
+    {
+      "id": "todo",
+      "title": "📋 To Do",
+      "cards": [
+        {
+          "id": "todo-002",
+          "title": "Calendar Integration",
+          "description": "Connect for proactive event reminders",
+          "priority": "medium",
+          "tags": ["personal"],
+          "agent": "bumble"
+        },
+        {
+          "id": "todo-003",
+          "title": "Gemini Billing Setup",
+          "description": "Enable billing for Gemini image generation (quota hit)",
+          "priority": "medium",
+          "tags": ["ai"],
+          "agent": "bumble"
+        }
+      ]
+    },
+    {
+      "id": "in-progress",
+      "title": "🔄 In Progress",
+      "cards": []
+    },
+    {
+      "id": "review",
+      "title": "👀 Waiting Review",
+      "cards": []
+    },
+    {
+      "id": "completed",
+      "title": "✅ Completed",
+      "cards": [
+        {
+          "id": "done-011",
+          "title": "🎯 TRADING HUB WEB APP",
+          "description": "Full-stack trading dashboard: Next.js 16, Supabase DB, real-time prices (Binance + Yahoo), AI screenshot analysis (Gemini), catalyst calendar. LIVE: trading-hub-nine.vercel.app",
+          "priority": "critical",
+          "tags": ["trading", "app"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-010",
+          "title": "🚀 TRADING INTELLIGENCE SYSTEM",
+          "description": "Complete trading automation: 2 skills (stock-hunter, crypto-hunter), 2 trackers (Binance, Yahoo), 3 cron jobs (daily stock 6AM, daily crypto 8PM, weekly deep dive Sunday)",
+          "priority": "critical",
+          "tags": ["trading", "crypto"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-009",
+          "title": "21 Skills Integrated",
+          "description": "All custom skills installed to ~/.clawdbot/skills/jason-*",
+          "priority": "high",
+          "tags": ["ai"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-008",
+          "title": "Skills Analysis (Sub-Agent)",
+          "description": "Analyzed 21 imported Claude skills in 1m23s",
+          "priority": "high",
+          "tags": ["ai"],
+          "agent": "subagent"
+        },
+        {
+          "id": "done-007",
+          "title": "Real-time Command Center",
+          "description": "Built interactive Kanban with live sessions panel",
+          "priority": "critical",
+          "tags": ["ai"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-005",
+          "title": "Deep Analysis (484 Claude Chats)",
+          "description": "Analyzed 203MB history, updated USER.md",
+          "priority": "critical",
+          "tags": ["ai"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-004",
+          "title": "Morning Brief Cron",
+          "description": "Daily 7:30 AM Telegram brief scheduled",
+          "priority": "high",
+          "tags": ["ai"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-003",
+          "title": "Kanban Permanent Service",
+          "description": "systemd service on localhost:8080",
+          "priority": "high",
+          "tags": ["ai"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-001",
+          "title": "Gmail CLI + Identity",
+          "description": "Bumble email + identity established",
+          "priority": "high",
+          "tags": ["ai"],
+          "agent": "bumble"
+        },
+        {
+          "id": "done-email",
+          "title": "Outlook Email Access",
+          "description": "PowerShell COM via WSL - read/send with draft approval",
+          "priority": "high",
+          "tags": ["work"],
+          "agent": "bumble"
+        }
+      ]
+    }
+  ],
+  "agents": [
+    {"id": "bumble", "name": "Bumble", "emoji": "🐝", "color": "#f59e0b"},
+    {"id": "subagent", "name": "Sub-Agent", "emoji": "🤖", "color": "#06b6d4"}
+  ],
+  "activeSessions": [
+    {
+      "key": "agent:main:main",
+      "kind": "main",
+      "model": "claude-opus-4-5",
+      "tokens": "187K/200K",
+      "status": "active"
+    }
+  ]
+}
