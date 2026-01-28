@@ -5,7 +5,7 @@
       "title": "💡 Ideas",
       "cards": [
         {
-          "id": "card-idea-1",
+          "id": "task-2",
           "title": "AI Model Optimization for One Dev",
           "description": "Get One Development mentioned in AI responses about Dubai developers",
           "status": "ideas",
@@ -19,15 +19,15 @@
       "title": "📋 To Do",
       "cards": [
         {
-          "id": "card-todo-1",
+          "id": "task-1",
           "title": "Trading Hub - Price Alerts",
-          "description": "Set up price alert notifications via Telegram",
+          "description": "Set up Telegram notifications for price movements",
           "status": "todo",
           "priority": "high",
           "tags": ["trading"]
         },
         {
-          "id": "card-todo-2",
+          "id": "task-3",
           "title": "Calendar Integration",
           "description": "Connect Google Calendar for scheduling",
           "status": "todo",
@@ -39,7 +39,16 @@
     {
       "id": "in-progress",
       "title": "🔄 In Progress",
-      "cards": []
+      "cards": [
+        {
+          "id": "task-6",
+          "title": "Kanban Live System",
+          "description": "Interactive board with drag-drop, live chat, real-time sync",
+          "status": "in-progress",
+          "priority": "high",
+          "tags": ["ai"]
+        }
+      ]
     },
     {
       "id": "review",
@@ -51,15 +60,15 @@
       "title": "✅ Completed",
       "cards": [
         {
-          "id": "card-done-1",
+          "id": "task-4",
           "title": "Trading Hub Web App",
-          "description": "Full stack crypto/stock tracker with Supabase",
+          "description": "Full stack crypto/stock tracker with Supabase - LIVE",
           "status": "completed",
           "priority": "high",
           "tags": ["trading"]
         },
         {
-          "id": "card-done-2",
+          "id": "task-5",
           "title": "News Feed + Sentiment",
           "description": "Real-time news with sentiment analysis",
           "status": "completed",
@@ -67,23 +76,23 @@
           "tags": ["trading", "ai"]
         },
         {
-          "id": "card-done-3",
-          "title": "Kanban Live Deploy",
-          "description": "Interactive kanban with drag-drop and live chat",
-          "status": "completed",
-          "priority": "high",
-          "tags": ["ai"]
-        },
-        {
-          "id": "card-done-4",
+          "id": "task-7",
           "title": "DO Dubai Island Report",
-          "description": "Salesforce report with correct field mapping",
+          "description": "Salesforce query with correct field mapping - VERIFIED",
           "status": "completed",
           "priority": "medium",
           "tags": ["work"]
+        },
+        {
+          "id": "task-8",
+          "title": "Supabase Kanban Table",
+          "description": "Created kanban_cards table with realtime enabled",
+          "status": "completed",
+          "priority": "medium",
+          "tags": ["ai"]
         }
       ]
     }
   ],
-  "lastUpdated": "2026-01-28T18:10:00Z"
+  "lastUpdated": "2026-01-28T18:30:00Z"
 }
