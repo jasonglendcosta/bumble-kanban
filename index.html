@@ -538,7 +538,11 @@
 
     // Load data
     async function loadData() {
+      // Always render columns first (even if empty)
+      renderKanban();
+      
       try {
+        // Try Supabase first
         const { data, error } = await supabase
           .from('kanban_cards')
           .select('*')
@@ -546,24 +550,32 @@
         
         if (error) throw error;
 
-        // Organize cards into columns
-        kanbanData.columns = COLUMNS.map(col => ({
-          ...col,
-          cards: (data || []).filter(card => card.status === col.id)
-        }));
-
-        renderKanban();
+        if (data && data.length > 0) {
+          // Organize cards into columns
+          kanbanData.columns = COLUMNS.map(col => ({
+            ...col,
+            cards: data.filter(card => card.status === col.id)
+          }));
+          renderKanban();
+          console.log('✅ Loaded from Supabase:', data.length, 'cards');
+          return;
+        }
       } catch (e) {
-        console.error('Load error:', e);
-        // Fallback to local data
-        try {
-          const res = await fetch('/data.json?' + Date.now());
-          const localData = await res.json();
+        console.log('Supabase error (trying fallback):', e.message);
+      }
+      
+      // Fallback to local data.json
+      try {
+        const res = await fetch('/data.json?' + Date.now());
+        const localData = await res.json();
+        if (localData && localData.columns) {
           kanbanData = localData;
           renderKanban();
-        } catch (e2) {
-          console.error('Fallback error:', e2);
+          console.log('✅ Loaded from data.json');
         }
+      } catch (e2) {
+        console.log('Fallback error:', e2.message);
+        // Keep empty columns rendered
       }
     }
 
