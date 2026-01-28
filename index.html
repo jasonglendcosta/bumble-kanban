@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>⚡ Bumble Command Center</title>
+  <title>⚡ Bumble Command Center | LIVE</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --bg-primary: #0a0a0f;
+      --bg-secondary: rgba(18, 18, 26, 0.95);
       --bg-card: rgba(26, 26, 36, 0.9);
       --border: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(216, 109, 203, 0.5);
       --text-primary: #f0f0f5;
       --text-secondary: #8888a0;
       --accent-pink: #D86DCB;
@@ -19,13 +22,14 @@
       --accent-red: #ef4444;
       --accent-yellow: #f59e0b;
       --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
     }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
       min-height: 100vh;
-      padding: 20px;
+      overflow-x: hidden;
     }
     .bg-gradient {
       position: fixed;
@@ -36,60 +40,111 @@
       pointer-events: none;
       z-index: -1;
     }
+
+    /* Header */
     header {
-      text-align: center;
-      margin-bottom: 30px;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 8px;
     }
-    .subtitle {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
+    .live-badge {
+      background: var(--accent-green);
+      color: #000;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      animation: pulse 2s infinite;
     }
-    .refresh-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .header-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn {
       padding: 10px 20px;
-      background: rgba(216, 109, 203, 0.2);
-      border: 1px solid var(--accent-pink);
-      color: var(--accent-pink);
       border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-primary);
       cursor: pointer;
       font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
       transition: all 0.3s;
     }
-    .refresh-btn:hover {
-      background: rgba(216, 109, 203, 0.3);
+    .btn:hover {
+      border-color: var(--accent-pink);
+      background: rgba(216, 109, 203, 0.1);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      border: none;
+      color: #fff;
+    }
+    .btn-primary:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(216, 109, 203, 0.4);
+    }
+
+    /* Main Layout */
+    .main-container {
+      display: flex;
+      height: calc(100vh - 80px);
+    }
+
+    /* Kanban Board */
+    .kanban-container {
+      flex: 1;
+      padding: 20px;
+      overflow-x: auto;
     }
     .kanban {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      display: flex;
       gap: 16px;
-      max-width: 1600px;
-      margin: 0 auto;
+      min-width: max-content;
+      height: 100%;
     }
     .column {
+      width: 300px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 16px;
-      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      max-height: calc(100vh - 140px);
+    }
+    .column.drag-over {
+      border-color: var(--accent-pink);
+      box-shadow: 0 0 30px rgba(216, 109, 203, 0.3);
     }
     .column-header {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
+      padding: 16px;
       border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .column-title {
       display: flex;
       align-items: center;
       gap: 8px;
@@ -101,18 +156,44 @@
       font-size: 0.75rem;
       color: var(--text-secondary);
     }
+    .add-card-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .add-card-btn:hover {
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+    }
+    .cards-container {
+      flex: 1;
+      padding: 12px;
+      overflow-y: auto;
+      min-height: 100px;
+    }
     .card {
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 14px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      cursor: grab;
       transition: all 0.3s;
     }
     .card:hover {
       border-color: var(--accent-pink);
       transform: translateY(-2px);
       box-shadow: 0 4px 20px rgba(216, 109, 203, 0.2);
+    }
+    .card.dragging {
+      opacity: 0.5;
+      transform: rotate(3deg);
     }
     .card-title {
       font-weight: 600;
@@ -123,15 +204,20 @@
       font-size: 0.8rem;
       color: var(--text-secondary);
       line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .card-meta {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       margin-top: 10px;
       flex-wrap: wrap;
+      align-items: center;
     }
     .tag {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
       padding: 3px 8px;
       border-radius: 6px;
       background: rgba(139, 92, 246, 0.2);
@@ -140,101 +226,610 @@
     .tag.trading { background: rgba(245, 158, 11, 0.2); color: var(--accent-yellow); }
     .tag.ai { background: rgba(216, 109, 203, 0.2); color: var(--accent-pink); }
     .tag.work { background: rgba(59, 130, 246, 0.2); color: var(--accent-blue); }
-    .priority-high { border-left: 3px solid var(--accent-red); }
-    .priority-critical { border-left: 3px solid var(--accent-pink); box-shadow: 0 0 15px rgba(216, 109, 203, 0.3); }
-    .agent {
-      font-size: 0.7rem;
-      color: var(--accent-yellow);
+    .tag.urgent { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+    .priority-indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-left: auto;
     }
-    .updated {
-      text-align: center;
+    .priority-high { background: var(--accent-yellow); }
+    .priority-critical { background: var(--accent-red); animation: pulse 1s infinite; }
+
+    /* Chat Panel */
+    .chat-panel {
+      width: 380px;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chat-messages {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .message {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    .message.user {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .message.bot {
+      background: rgba(255,255,255,0.08);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .message-meta {
+      font-size: 0.65rem;
       color: var(--text-secondary);
-      font-size: 0.8rem;
-      margin-top: 30px;
+      margin-top: 4px;
     }
-    @media (max-width: 1200px) {
-      .kanban { grid-template-columns: repeat(3, 1fr); }
+    .chat-input-container {
+      padding: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 10px;
     }
-    @media (max-width: 768px) {
-      .kanban { grid-template-columns: 1fr; }
+    .chat-input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      outline: none;
     }
+    .chat-input:focus {
+      border-color: var(--accent-pink);
+    }
+    .send-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .send-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal {
+      width: 90%;
+      max-width: 600px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .modal-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+    }
+    .close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .close-btn:hover {
+      border-color: var(--accent-red);
+      color: var(--accent-red);
+    }
+    .modal-body {
+      padding: 24px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      outline: none;
+      font-family: inherit;
+    }
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent-pink);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .modal-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .btn-danger {
+      background: rgba(239, 68, 68, 0.2);
+      border-color: var(--accent-red);
+      color: var(--accent-red);
+    }
+    .btn-danger:hover {
+      background: rgba(239, 68, 68, 0.3);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
   </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
-  <button class="refresh-btn" onclick="loadData()">🔄 Refresh</button>
-  
+
   <header>
-    <h1>⚡ Bumble Command Center</h1>
-    <p class="subtitle">GOD MODE Task Tracking for Jason</p>
+    <div class="logo">
+      <h1>⚡ Bumble Command Center</h1>
+      <span class="live-badge">● LIVE</span>
+    </div>
+    <div class="header-actions">
+      <button class="btn" onclick="loadData()">🔄 Sync</button>
+      <button class="btn btn-primary" onclick="openNewCardModal()">+ New Task</button>
+    </div>
   </header>
 
-  <div class="kanban" id="kanban"></div>
-  <p class="updated" id="updated"></p>
+  <div class="main-container">
+    <div class="kanban-container">
+      <div class="kanban" id="kanban"></div>
+    </div>
+
+    <div class="chat-panel">
+      <div class="chat-header">
+        💬 Live Chat with Bumble
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot">
+          Hey Jason! 🐝 I'm watching the board. Ask me anything or tell me to add/move tasks!
+          <div class="message-meta">Bumble • just now</div>
+        </div>
+      </div>
+      <div class="chat-input-container">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Talk to Bumble..." onkeypress="if(event.key==='Enter')sendChat()">
+        <button class="send-btn" onclick="sendChat()">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card Modal -->
+  <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <span class="modal-title" id="modalTitle">Task Details</span>
+        <button class="close-btn" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="cardId">
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" id="cardTitleInput" placeholder="Task title...">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="cardDescInput" placeholder="What needs to be done..."></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Status</label>
+            <select id="cardStatusInput">
+              <option value="ideas">💡 Ideas</option>
+              <option value="todo">📋 To Do</option>
+              <option value="in-progress">🔄 In Progress</option>
+              <option value="review">👀 Review</option>
+              <option value="completed">✅ Completed</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Priority</label>
+            <select id="cardPriorityInput">
+              <option value="low">Low</option>
+              <option value="medium">Medium</option>
+              <option value="high">High</option>
+              <option value="critical">🔥 Critical</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tags (comma-separated)</label>
+          <input type="text" id="cardTagsInput" placeholder="trading, ai, work...">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" id="deleteBtn" onclick="deleteCard()" style="display:none;">Delete</button>
+        <button class="btn" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveCard()">Save</button>
+      </div>
+    </div>
+  </div>
 
   <script>
+    // Supabase setup
+    const SUPABASE_URL = 'https://gfzbwtfnegabrwuianod.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmemJ3dGZuZWdhYnJ3dWlhbm9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc5NzYyODIsImV4cCI6MjA1MzU1MjI4Mn0.1lF-OO6HEjGmvyB8IqoYFfKNxbhBnJII0gs_MmUvz0Q';
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
     const COLUMNS = [
-      { id: 'ideas', title: '💡 Ideas', icon: '💡' },
-      { id: 'todo', title: '📋 To Do', icon: '📋' },
-      { id: 'in-progress', title: '🔄 In Progress', icon: '🔄' },
-      { id: 'review', title: '👀 Review', icon: '👀' },
-      { id: 'completed', title: '✅ Completed', icon: '✅' }
+      { id: 'ideas', title: '💡 Ideas' },
+      { id: 'todo', title: '📋 To Do' },
+      { id: 'in-progress', title: '🔄 In Progress' },
+      { id: 'review', title: '👀 Review' },
+      { id: 'completed', title: '✅ Completed' }
     ];
 
+    let kanbanData = { columns: COLUMNS.map(c => ({ ...c, cards: [] })) };
+    let draggedCard = null;
+
+    // Load data
     async function loadData() {
       try {
-        const res = await fetch('/data.json?' + Date.now());
-        const data = await res.json();
-        renderKanban(data);
+        const { data, error } = await supabase
+          .from('kanban_cards')
+          .select('*')
+          .order('position');
+        
+        if (error) throw error;
+
+        // Organize cards into columns
+        kanbanData.columns = COLUMNS.map(col => ({
+          ...col,
+          cards: (data || []).filter(card => card.status === col.id)
+        }));
+
+        renderKanban();
       } catch (e) {
-        console.error('Failed to load data:', e);
+        console.error('Load error:', e);
+        // Fallback to local data
+        try {
+          const res = await fetch('/data.json?' + Date.now());
+          const localData = await res.json();
+          kanbanData = localData;
+          renderKanban();
+        } catch (e2) {
+          console.error('Fallback error:', e2);
+        }
       }
     }
 
-    function renderKanban(data) {
+    // Render kanban board
+    function renderKanban() {
       const kanban = document.getElementById('kanban');
       kanban.innerHTML = '';
 
-      COLUMNS.forEach(col => {
-        const colData = data.columns?.find(c => c.id === col.id) || { cards: [] };
-        const cards = colData.cards || [];
-
+      kanbanData.columns.forEach(col => {
         const colEl = document.createElement('div');
         colEl.className = 'column';
+        colEl.dataset.columnId = col.id;
+
         colEl.innerHTML = `
           <div class="column-header">
-            ${col.title} <span class="count">${cards.length}</span>
+            <div class="column-title">
+              ${col.title}
+              <span class="count">${col.cards?.length || 0}</span>
+            </div>
+            <button class="add-card-btn" onclick="openNewCardModal('${col.id}')">+</button>
+          </div>
+          <div class="cards-container" 
+               ondragover="handleDragOver(event)" 
+               ondragleave="handleDragLeave(event)"
+               ondrop="handleDrop(event, '${col.id}')">
           </div>
         `;
 
-        cards.forEach(card => {
-          const cardEl = document.createElement('div');
-          cardEl.className = 'card' + (card.priority === 'critical' ? ' priority-critical' : card.priority === 'high' ? ' priority-high' : '');
-          
-          const tags = (card.tags || []).map(t => 
-            `<span class="tag ${t}">${t}</span>`
-          ).join('');
-
-          cardEl.innerHTML = `
-            <div class="card-title">${card.title}</div>
-            <div class="card-desc">${card.description || ''}</div>
-            <div class="card-meta">
-              ${tags}
-              ${card.agent ? `<span class="agent">🐝 ${card.agent}</span>` : ''}
-            </div>
-          `;
-          colEl.appendChild(cardEl);
+        const container = colEl.querySelector('.cards-container');
+        (col.cards || []).forEach(card => {
+          container.appendChild(createCardElement(card));
         });
 
         kanban.appendChild(colEl);
       });
-
-      document.getElementById('updated').textContent = 
-        `Last updated: ${new Date(data.lastUpdated).toLocaleString()}`;
     }
 
+    // Create card element
+    function createCardElement(card) {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'card';
+      cardEl.draggable = true;
+      cardEl.dataset.cardId = card.id;
+      cardEl.onclick = () => openCardModal(card);
+      cardEl.ondragstart = (e) => handleDragStart(e, card);
+      cardEl.ondragend = handleDragEnd;
+
+      const tags = (card.tags || []).map(t => 
+        `<span class="tag ${t}">${t}</span>`
+      ).join('');
+
+      const priority = card.priority === 'critical' || card.priority === 'high' 
+        ? `<div class="priority-indicator priority-${card.priority}"></div>` 
+        : '';
+
+      cardEl.innerHTML = `
+        <div class="card-title">${card.title || 'Untitled'}</div>
+        <div class="card-desc">${card.description || ''}</div>
+        <div class="card-meta">
+          ${tags}
+          ${priority}
+        </div>
+      `;
+
+      return cardEl;
+    }
+
+    // Drag and Drop
+    function handleDragStart(e, card) {
+      draggedCard = card;
+      e.target.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function handleDragEnd(e) {
+      e.target.classList.remove('dragging');
+      document.querySelectorAll('.column').forEach(col => col.classList.remove('drag-over'));
+    }
+
+    function handleDragOver(e) {
+      e.preventDefault();
+      e.currentTarget.closest('.column').classList.add('drag-over');
+    }
+
+    function handleDragLeave(e) {
+      e.currentTarget.closest('.column').classList.remove('drag-over');
+    }
+
+    async function handleDrop(e, columnId) {
+      e.preventDefault();
+      e.currentTarget.closest('.column').classList.remove('drag-over');
+
+      if (!draggedCard) return;
+
+      // Update locally
+      kanbanData.columns.forEach(col => {
+        col.cards = col.cards.filter(c => c.id !== draggedCard.id);
+      });
+      
+      const targetCol = kanbanData.columns.find(c => c.id === columnId);
+      if (targetCol) {
+        draggedCard.status = columnId;
+        targetCol.cards.push(draggedCard);
+      }
+
+      renderKanban();
+
+      // Update in Supabase
+      try {
+        await supabase
+          .from('kanban_cards')
+          .update({ status: columnId, updated_at: new Date().toISOString() })
+          .eq('id', draggedCard.id);
+      } catch (e) {
+        console.error('Update error:', e);
+      }
+
+      addChatMessage('bot', `Moved "${draggedCard.title}" to ${COLUMNS.find(c => c.id === columnId)?.title || columnId} ✅`);
+      draggedCard = null;
+    }
+
+    // Modal functions
+    function openNewCardModal(status = 'todo') {
+      document.getElementById('modalTitle').textContent = 'New Task';
+      document.getElementById('cardId').value = '';
+      document.getElementById('cardTitleInput').value = '';
+      document.getElementById('cardDescInput').value = '';
+      document.getElementById('cardStatusInput').value = status;
+      document.getElementById('cardPriorityInput').value = 'medium';
+      document.getElementById('cardTagsInput').value = '';
+      document.getElementById('deleteBtn').style.display = 'none';
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function openCardModal(card) {
+      document.getElementById('modalTitle').textContent = 'Edit Task';
+      document.getElementById('cardId').value = card.id;
+      document.getElementById('cardTitleInput').value = card.title || '';
+      document.getElementById('cardDescInput').value = card.description || '';
+      document.getElementById('cardStatusInput').value = card.status || 'todo';
+      document.getElementById('cardPriorityInput').value = card.priority || 'medium';
+      document.getElementById('cardTagsInput').value = (card.tags || []).join(', ');
+      document.getElementById('deleteBtn').style.display = 'block';
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+
+    async function saveCard() {
+      const id = document.getElementById('cardId').value;
+      const title = document.getElementById('cardTitleInput').value.trim();
+      const description = document.getElementById('cardDescInput').value.trim();
+      const status = document.getElementById('cardStatusInput').value;
+      const priority = document.getElementById('cardPriorityInput').value;
+      const tags = document.getElementById('cardTagsInput').value.split(',').map(t => t.trim()).filter(Boolean);
+
+      if (!title) {
+        alert('Title is required!');
+        return;
+      }
+
+      const cardData = {
+        title,
+        description,
+        status,
+        priority,
+        tags,
+        updated_at: new Date().toISOString()
+      };
+
+      try {
+        if (id) {
+          // Update existing
+          await supabase.from('kanban_cards').update(cardData).eq('id', id);
+          addChatMessage('bot', `Updated "${title}" 📝`);
+        } else {
+          // Create new
+          cardData.id = 'card-' + Date.now();
+          cardData.created_at = new Date().toISOString();
+          cardData.position = Date.now();
+          await supabase.from('kanban_cards').insert(cardData);
+          addChatMessage('bot', `Created new task: "${title}" 🎯`);
+        }
+        
+        closeModal();
+        loadData();
+      } catch (e) {
+        console.error('Save error:', e);
+        alert('Failed to save. Check console.');
+      }
+    }
+
+    async function deleteCard() {
+      const id = document.getElementById('cardId').value;
+      const title = document.getElementById('cardTitleInput').value;
+      
+      if (!id || !confirm('Delete this task?')) return;
+
+      try {
+        await supabase.from('kanban_cards').delete().eq('id', id);
+        addChatMessage('bot', `Deleted "${title}" 🗑️`);
+        closeModal();
+        loadData();
+      } catch (e) {
+        console.error('Delete error:', e);
+      }
+    }
+
+    // Chat functions
+    function addChatMessage(type, text) {
+      const container = document.getElementById('chatMessages');
+      const msg = document.createElement('div');
+      msg.className = `message ${type}`;
+      msg.innerHTML = `
+        ${text}
+        <div class="message-meta">${type === 'bot' ? 'Bumble' : 'You'} • just now</div>
+      `;
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    async function sendChat() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      addChatMessage('user', text);
+      input.value = '';
+
+      // Simple command parsing
+      const lower = text.toLowerCase();
+      
+      if (lower.includes('add') || lower.includes('create') || lower.includes('new')) {
+        addChatMessage('bot', 'Opening task creator... 📝');
+        setTimeout(() => openNewCardModal(), 500);
+      } else if (lower.includes('status') || lower.includes('summary')) {
+        const counts = kanbanData.columns.map(c => `${c.title}: ${c.cards?.length || 0}`).join(' | ');
+        addChatMessage('bot', `📊 Board Status:\n${counts}`);
+      } else if (lower.includes('help')) {
+        addChatMessage('bot', `🐝 I can help with:\n• "add task" - Create new task\n• "status" - Show board summary\n• Drag cards to move them!\n• Click cards to edit details`);
+      } else {
+        addChatMessage('bot', `Got it! 👀 Type "help" to see what I can do, or drag cards around to organize!`);
+      }
+    }
+
+    // Real-time subscription
+    function setupRealtime() {
+      supabase
+        .channel('kanban_changes')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'kanban_cards' }, (payload) => {
+          console.log('Realtime update:', payload);
+          loadData();
+          if (payload.eventType === 'INSERT') {
+            addChatMessage('bot', `🔔 New task added: "${payload.new.title}"`);
+          } else if (payload.eventType === 'UPDATE') {
+            addChatMessage('bot', `🔄 Task updated: "${payload.new.title}"`);
+          }
+        })
+        .subscribe();
+    }
+
+    // Initialize
     loadData();
-    setInterval(loadData, 30000); // Auto-refresh every 30s
+    setupRealtime();
   </script>
 </body>
 </html>
