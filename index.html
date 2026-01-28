@@ -523,7 +523,7 @@
     // Supabase setup
     const SUPABASE_URL = 'https://gfzbwtfnegabrwuianod.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmemJ3dGZuZWdhYnJ3dWlhbm9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc5NzYyODIsImV4cCI6MjA1MzU1MjI4Mn0.1lF-OO6HEjGmvyB8IqoYFfKNxbhBnJII0gs_MmUvz0Q';
-    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     const COLUMNS = [
       { id: 'ideas', title: '💡 Ideas' },
@@ -543,7 +543,7 @@
       
       try {
         // Try Supabase first
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
           .from('kanban_cards')
           .select('*')
           .order('position');
@@ -685,7 +685,7 @@
 
       // Update in Supabase
       try {
-        await supabase
+        await supabaseClient
           .from('kanban_cards')
           .update({ status: columnId, updated_at: new Date().toISOString() })
           .eq('id', draggedCard.id);
@@ -751,14 +751,14 @@
       try {
         if (id) {
           // Update existing
-          await supabase.from('kanban_cards').update(cardData).eq('id', id);
+          await supabaseClient.from('kanban_cards').update(cardData).eq('id', id);
           addChatMessage('bot', `Updated "${title}" 📝`);
         } else {
           // Create new
           cardData.id = 'card-' + Date.now();
           cardData.created_at = new Date().toISOString();
           cardData.position = Date.now();
-          await supabase.from('kanban_cards').insert(cardData);
+          await supabaseClient.from('kanban_cards').insert(cardData);
           addChatMessage('bot', `Created new task: "${title}" 🎯`);
         }
         
@@ -777,7 +777,7 @@
       if (!id || !confirm('Delete this task?')) return;
 
       try {
-        await supabase.from('kanban_cards').delete().eq('id', id);
+        await supabaseClient.from('kanban_cards').delete().eq('id', id);
         addChatMessage('bot', `Deleted "${title}" 🗑️`);
         closeModal();
         loadData();
@@ -825,7 +825,7 @@
 
     // Real-time subscription
     function setupRealtime() {
-      supabase
+      supabaseClient
         .channel('kanban_changes')
         .on('postgres_changes', { event: '*', schema: 'public', table: 'kanban_cards' }, (payload) => {
           console.log('Realtime update:', payload);
