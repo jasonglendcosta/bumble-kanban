@@ -2,7 +2,7 @@
   "columns": [
     {
       "id": "ideas",
-      "title": "💡 Ideas",
+      "title": "Ideas",
       "cards": [
         {
           "id": "task-2",
@@ -10,13 +10,28 @@
           "description": "Get One Development mentioned in AI responses about Dubai developers",
           "status": "ideas",
           "priority": "critical",
-          "tags": ["work", "ai"]
+          "tags": ["work", "ai"],
+          "dueDate": "2026-02-05",
+          "timeTrackedMinutes": 90,
+          "assignee": "Optimus",
+          "subtasks": [
+            {
+              "id": "task-2-sub-1",
+              "title": "Benchmark prompts",
+              "done": true
+            },
+            {
+              "id": "task-2-sub-2",
+              "title": "Deploy new prompt stack",
+              "done": false
+            }
+          ]
         }
       ]
     },
     {
       "id": "todo",
-      "title": "📋 To Do",
+      "title": "To Do",
       "cards": [
         {
           "id": "task-1",
@@ -24,7 +39,22 @@
           "description": "Set up Telegram notifications for price movements",
           "status": "todo",
           "priority": "high",
-          "tags": ["trading"]
+          "tags": ["trading"],
+          "dueDate": "2026-02-12",
+          "timeTrackedMinutes": 45,
+          "assignee": "Bumble",
+          "subtasks": [
+            {
+              "id": "task-1-sub-1",
+              "title": "Define alert thresholds",
+              "done": false
+            },
+            {
+              "id": "task-1-sub-2",
+              "title": "Connect Telegram bot",
+              "done": false
+            }
+          ]
         },
         {
           "id": "task-3",
@@ -32,13 +62,28 @@
           "description": "Connect Google Calendar for scheduling",
           "status": "todo",
           "priority": "medium",
-          "tags": ["work"]
+          "tags": ["work"],
+          "dueDate": "2026-02-14",
+          "timeTrackedMinutes": 30,
+          "assignee": "Bumble",
+          "subtasks": [
+            {
+              "id": "task-3-sub-1",
+              "title": "Review OAuth scopes",
+              "done": true
+            },
+            {
+              "id": "task-3-sub-2",
+              "title": "Prototype scheduling UI",
+              "done": false
+            }
+          ]
         }
       ]
     },
     {
       "id": "in-progress",
-      "title": "🔄 In Progress",
+      "title": "In Progress",
       "cards": [
         {
           "id": "task-6",
@@ -46,53 +91,131 @@
           "description": "Interactive board with drag-drop, live chat, real-time sync",
           "status": "in-progress",
           "priority": "high",
-          "tags": ["ai"]
+          "tags": ["ai"],
+          "dueDate": "2026-02-02",
+          "timeTrackedMinutes": 210,
+          "assignee": "Optimus",
+          "subtasks": [
+            {
+              "id": "task-6-sub-1",
+              "title": "Wireframe UX flow",
+              "done": true
+            },
+            {
+              "id": "task-6-sub-2",
+              "title": "Sync realtime layer",
+              "done": false
+            },
+            {
+              "id": "task-6-sub-3",
+              "title": "QA drag-drop",
+              "done": false
+            }
+          ]
         }
       ]
     },
     {
-      "id": "review",
-      "title": "👀 Review",
-      "cards": []
-    },
-    {
-      "id": "completed",
-      "title": "✅ Completed",
+      "id": "done",
+      "title": "Done",
       "cards": [
         {
           "id": "task-4",
           "title": "Trading Hub Web App",
           "description": "Full stack crypto/stock tracker with Supabase - LIVE",
-          "status": "completed",
+          "status": "done",
           "priority": "high",
-          "tags": ["trading"]
+          "tags": ["trading"],
+          "dueDate": "2026-01-18",
+          "timeTrackedMinutes": 480,
+          "assignee": "Bumble",
+          "subtasks": [
+            {
+              "id": "task-4-sub-1",
+              "title": "Ship UI",
+              "done": true
+            },
+            {
+              "id": "task-4-sub-2",
+              "title": "Release changelog",
+              "done": true
+            }
+          ]
         },
         {
           "id": "task-5",
           "title": "News Feed + Sentiment",
           "description": "Real-time news with sentiment analysis",
-          "status": "completed",
+          "status": "done",
           "priority": "medium",
-          "tags": ["trading", "ai"]
+          "tags": ["trading", "ai"],
+          "dueDate": "2026-01-22",
+          "timeTrackedMinutes": 260,
+          "assignee": "Optimus",
+          "subtasks": [
+            {
+              "id": "task-5-sub-1",
+              "title": "Tune sentiment model",
+              "done": true
+            },
+            {
+              "id": "task-5-sub-2",
+              "title": "Add alerting",
+              "done": true
+            }
+          ]
         },
         {
           "id": "task-7",
           "title": "DO Dubai Island Report",
           "description": "Salesforce query with correct field mapping - VERIFIED",
-          "status": "completed",
+          "status": "done",
           "priority": "medium",
-          "tags": ["work"]
+          "tags": ["work"],
+          "dueDate": "2026-01-10",
+          "timeTrackedMinutes": 120,
+          "assignee": "Bumble",
+          "subtasks": [
+            {
+              "id": "task-7-sub-1",
+              "title": "Verify field mapping",
+              "done": true
+            },
+            {
+              "id": "task-7-sub-2",
+              "title": "Share with stakeholders",
+              "done": true
+            }
+          ]
         },
         {
           "id": "task-8",
           "title": "Supabase Kanban Table",
           "description": "Created kanban_cards table with realtime enabled",
-          "status": "completed",
+          "status": "done",
           "priority": "medium",
-          "tags": ["ai"]
+          "tags": ["ai"],
+          "dueDate": "2026-01-14",
+          "timeTrackedMinutes": 140,
+          "assignee": "Optimus",
+          "subtasks": [
+            {
+              "id": "task-8-sub-1",
+              "title": "Enable realtime",
+              "done": true
+            },
+            {
+              "id": "task-8-sub-2",
+              "title": "Document schema",
+              "done": true
+            }
+          ]
         }
       ]
     }
   ],
-  "lastUpdated": "2026-01-28T18:30:00Z"
+  "lastUpdated": "2026-01-28T18:30:00Z",
+  "meta": {
+    "version": 2
+  }
 }
