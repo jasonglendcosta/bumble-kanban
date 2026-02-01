@@ -2,7 +2,7 @@
   "columns": [
     {
       "id": "ideas",
-      "title": "Ideas",
+      "title": "💡 Ideas",
       "cards": [
         {
           "id": "task-2",
@@ -10,29 +10,52 @@
           "description": "Get One Development mentioned in AI responses about Dubai developers",
           "status": "ideas",
           "priority": "critical",
-          "tags": ["work", "ai"],
+          "tags": ["work", "ai", "seo"],
           "dueDate": "2026-02-05",
           "timeTrackedMinutes": 90,
-          "assignee": "Optimus",
+          "assignee": "Bumble",
           "subtasks": [
-            {
-              "id": "task-2-sub-1",
-              "title": "Benchmark prompts",
-              "done": true
-            },
-            {
-              "id": "task-2-sub-2",
-              "title": "Deploy new prompt stack",
-              "done": false
-            }
+            { "id": "task-2-sub-1", "title": "Benchmark prompts", "done": true },
+            { "id": "task-2-sub-2", "title": "Deploy new prompt stack", "done": false }
+          ]
+        },
+        {
+          "id": "task-antirender",
+          "title": "Test Antirender on Laguna Renders",
+          "description": "Use Antirender to remove CGI shine from Laguna Residence architectural renders",
+          "status": "ideas",
+          "priority": "medium",
+          "tags": ["work", "ai", "real-estate"],
+          "dueDate": "2026-02-07",
+          "timeTrackedMinutes": 0,
+          "assignee": "Bumble",
+          "subtasks": [
+            { "id": "antirender-1", "title": "Get sample renders", "done": false },
+            { "id": "antirender-2", "title": "Process through Antirender", "done": false },
+            { "id": "antirender-3", "title": "Compare before/after", "done": false }
           ]
         }
       ]
     },
     {
       "id": "todo",
-      "title": "To Do",
+      "title": "📋 To Do",
       "cards": [
+        {
+          "id": "task-kimi",
+          "title": "Kimi K2.5 Authentication",
+          "description": "Run kimi login to authenticate Kimi Code CLI",
+          "status": "todo",
+          "priority": "high",
+          "tags": ["ai", "setup"],
+          "dueDate": "2026-02-02",
+          "timeTrackedMinutes": 0,
+          "assignee": "Jason",
+          "subtasks": [
+            { "id": "kimi-1", "title": "Run kimi login", "done": false },
+            { "id": "kimi-2", "title": "Test with simple prompt", "done": false }
+          ]
+        },
         {
           "id": "task-1",
           "title": "Trading Hub - Price Alerts",
@@ -44,16 +67,8 @@
           "timeTrackedMinutes": 45,
           "assignee": "Bumble",
           "subtasks": [
-            {
-              "id": "task-1-sub-1",
-              "title": "Define alert thresholds",
-              "done": false
-            },
-            {
-              "id": "task-1-sub-2",
-              "title": "Connect Telegram bot",
-              "done": false
-            }
+            { "id": "task-1-sub-1", "title": "Define alert thresholds", "done": false },
+            { "id": "task-1-sub-2", "title": "Connect Telegram bot", "done": false }
           ]
         },
         {
@@ -67,58 +82,156 @@
           "timeTrackedMinutes": 30,
           "assignee": "Bumble",
           "subtasks": [
-            {
-              "id": "task-3-sub-1",
-              "title": "Review OAuth scopes",
-              "done": true
-            },
-            {
-              "id": "task-3-sub-2",
-              "title": "Prototype scheduling UI",
-              "done": false
-            }
+            { "id": "task-3-sub-1", "title": "Review OAuth scopes", "done": true },
+            { "id": "task-3-sub-2", "title": "Prototype scheduling UI", "done": false }
+          ]
+        },
+        {
+          "id": "task-gemini-browser",
+          "title": "Gemini Browser Automation",
+          "description": "Set up browser relay to automate Gemini app for free image generation",
+          "status": "todo",
+          "priority": "medium",
+          "tags": ["ai", "automation"],
+          "dueDate": "2026-02-05",
+          "timeTrackedMinutes": 0,
+          "assignee": "Bumble",
+          "subtasks": [
+            { "id": "gemini-1", "title": "Jason attaches Chrome tab", "done": false },
+            { "id": "gemini-2", "title": "Test image generation flow", "done": false }
           ]
         }
       ]
     },
     {
       "id": "in-progress",
-      "title": "In Progress",
+      "title": "🚀 In Progress",
       "cards": [
         {
           "id": "task-6",
           "title": "Kanban Live System",
-          "description": "Interactive board with drag-drop, live chat, real-time sync",
+          "description": "Unified kanban with all 5 dashboards, live sync, Strategy theme",
           "status": "in-progress",
-          "priority": "high",
-          "tags": ["ai"],
-          "dueDate": "2026-02-02",
+          "priority": "critical",
+          "tags": ["ai", "dashboard"],
+          "dueDate": "2026-02-01",
           "timeTrackedMinutes": 210,
-          "assignee": "Optimus",
+          "assignee": "Bumble",
           "subtasks": [
-            {
-              "id": "task-6-sub-1",
-              "title": "Wireframe UX flow",
-              "done": true
-            },
-            {
-              "id": "task-6-sub-2",
-              "title": "Sync realtime layer",
-              "done": false
-            },
-            {
-              "id": "task-6-sub-3",
-              "title": "QA drag-drop",
-              "done": false
-            }
+            { "id": "task-6-sub-1", "title": "Merge kanban versions", "done": true },
+            { "id": "task-6-sub-2", "title": "Add 5 dashboards as projects", "done": true },
+            { "id": "task-6-sub-3", "title": "Strategy theme + mobile UI", "done": false },
+            { "id": "task-6-sub-4", "title": "Live sync with Clawdbot", "done": false },
+            { "id": "task-6-sub-5", "title": "Deploy to Vercel", "done": false }
           ]
         }
       ]
     },
     {
       "id": "done",
-      "title": "Done",
+      "title": "✅ Done",
       "cards": [
+        {
+          "id": "dash-crypto",
+          "title": "📈 Crypto Command Dashboard",
+          "description": "GOD TIER crypto dashboard: whale alerts, funding rates, social sentiment, DeFi yields, correlation matrix, risk metrics (Sharpe, drawdown, volatility), P&L tracking",
+          "status": "done",
+          "priority": "high",
+          "tags": ["dashboard", "trading", "ai"],
+          "dueDate": "2026-01-31",
+          "timeTrackedMinutes": 120,
+          "assignee": "Bumble",
+          "link": "file:///home/ason__osta/clawd/dashboards/crypto-command/index.html",
+          "subtasks": [
+            { "id": "crypto-1", "title": "Portfolio tracker", "done": true },
+            { "id": "crypto-2", "title": "Whale alerts", "done": true },
+            { "id": "crypto-3", "title": "Risk metrics", "done": true }
+          ]
+        },
+        {
+          "id": "dash-morning",
+          "title": "⚡ Morning Intel Dashboard",
+          "description": "GOD TIER morning briefing: AI summary, speak button, energy curve, habit streaks, yesterday's wins, focus blocks, daily intention",
+          "status": "done",
+          "priority": "high",
+          "tags": ["dashboard", "productivity", "ai"],
+          "dueDate": "2026-01-31",
+          "timeTrackedMinutes": 110,
+          "assignee": "Bumble",
+          "link": "file:///home/ason__osta/clawd/dashboards/morning-intel/index.html",
+          "subtasks": [
+            { "id": "morning-1", "title": "AI briefing summary", "done": true },
+            { "id": "morning-2", "title": "Habit streaks", "done": true },
+            { "id": "morning-3", "title": "Energy curve", "done": true }
+          ]
+        },
+        {
+          "id": "dash-dubai",
+          "title": "🏢 Dubai Intel Dashboard",
+          "description": "GOD TIER real estate intel: AI article summaries, sentiment badges, SWOT analysis, price/sqft trends, launch calendar, competitor profiles",
+          "status": "done",
+          "priority": "high",
+          "tags": ["dashboard", "work", "real-estate"],
+          "dueDate": "2026-01-31",
+          "timeTrackedMinutes": 90,
+          "assignee": "Bumble",
+          "link": "file:///home/ason__osta/clawd/dashboards/dubai-intel/index.html",
+          "subtasks": [
+            { "id": "dubai-1", "title": "AI summaries", "done": true },
+            { "id": "dubai-2", "title": "Competitor profiles", "done": true },
+            { "id": "dubai-3", "title": "Price trends", "done": true }
+          ]
+        },
+        {
+          "id": "dash-linkedin",
+          "title": "✍️ LinkedIn Engine Dashboard",
+          "description": "GOD TIER content engine: viral score prediction, AI rewrite (6 styles), engagement estimator, content repurposing, best times heatmap",
+          "status": "done",
+          "priority": "high",
+          "tags": ["dashboard", "marketing", "ai"],
+          "dueDate": "2026-01-31",
+          "timeTrackedMinutes": 100,
+          "assignee": "Bumble",
+          "link": "file:///home/ason__osta/clawd/dashboards/linkedin-engine/index.html",
+          "subtasks": [
+            { "id": "linkedin-1", "title": "Viral score prediction", "done": true },
+            { "id": "linkedin-2", "title": "AI rewrite styles", "done": true },
+            { "id": "linkedin-3", "title": "Best times heatmap", "done": true }
+          ]
+        },
+        {
+          "id": "dash-crm",
+          "title": "🤝 Relationship CRM Dashboard",
+          "description": "GOD TIER CRM: AI follow-up messages, decay predictions, meeting prep cards, intro engine, birthday calendar, goals tracker",
+          "status": "done",
+          "priority": "high",
+          "tags": ["dashboard", "crm", "ai"],
+          "dueDate": "2026-01-31",
+          "timeTrackedMinutes": 110,
+          "assignee": "Bumble",
+          "link": "file:///home/ason__osta/clawd/dashboards/relationship-crm/index.html",
+          "subtasks": [
+            { "id": "crm-1", "title": "AI follow-up messages", "done": true },
+            { "id": "crm-2", "title": "Decay predictions", "done": true },
+            { "id": "crm-3", "title": "Meeting prep cards", "done": true }
+          ]
+        },
+        {
+          "id": "task-career",
+          "title": "GOD TIER Career Strategy Doc",
+          "description": "7-move career acceleration framework for Jason",
+          "status": "done",
+          "priority": "critical",
+          "tags": ["career", "strategy"],
+          "dueDate": "2026-01-31",
+          "timeTrackedMinutes": 60,
+          "assignee": "Bumble",
+          "link": "file:///home/ason__osta/clawd/second-brain/documents/god-tier-career-strategy.md",
+          "subtasks": [
+            { "id": "career-1", "title": "7 key moves defined", "done": true },
+            { "id": "career-2", "title": "Monday review reminder set", "done": true }
+          ]
+        },
         {
           "id": "task-4",
           "title": "Trading Hub Web App",
@@ -130,92 +243,37 @@
           "timeTrackedMinutes": 480,
           "assignee": "Bumble",
           "subtasks": [
-            {
-              "id": "task-4-sub-1",
-              "title": "Ship UI",
-              "done": true
-            },
-            {
-              "id": "task-4-sub-2",
-              "title": "Release changelog",
-              "done": true
-            }
+            { "id": "task-4-sub-1", "title": "Ship UI", "done": true },
+            { "id": "task-4-sub-2", "title": "Release changelog", "done": true }
           ]
         },
         {
-          "id": "task-5",
-          "title": "News Feed + Sentiment",
-          "description": "Real-time news with sentiment analysis",
+          "id": "task-memory",
+          "title": "Memory Search + Auto-Flush",
+          "description": "Enabled memorySearch and compaction.memoryFlush in Clawdbot config",
           "status": "done",
-          "priority": "medium",
-          "tags": ["trading", "ai"],
-          "dueDate": "2026-01-22",
-          "timeTrackedMinutes": 260,
-          "assignee": "Optimus",
-          "subtasks": [
-            {
-              "id": "task-5-sub-1",
-              "title": "Tune sentiment model",
-              "done": true
-            },
-            {
-              "id": "task-5-sub-2",
-              "title": "Add alerting",
-              "done": true
-            }
-          ]
-        },
-        {
-          "id": "task-7",
-          "title": "DO Dubai Island Report",
-          "description": "Salesforce query with correct field mapping - VERIFIED",
-          "status": "done",
-          "priority": "medium",
-          "tags": ["work"],
-          "dueDate": "2026-01-10",
-          "timeTrackedMinutes": 120,
+          "priority": "high",
+          "tags": ["ai", "setup"],
+          "dueDate": "2026-01-31",
+          "timeTrackedMinutes": 30,
           "assignee": "Bumble",
           "subtasks": [
-            {
-              "id": "task-7-sub-1",
-              "title": "Verify field mapping",
-              "done": true
-            },
-            {
-              "id": "task-7-sub-2",
-              "title": "Share with stakeholders",
-              "done": true
-            }
-          ]
-        },
-        {
-          "id": "task-8",
-          "title": "Supabase Kanban Table",
-          "description": "Created kanban_cards table with realtime enabled",
-          "status": "done",
-          "priority": "medium",
-          "tags": ["ai"],
-          "dueDate": "2026-01-14",
-          "timeTrackedMinutes": 140,
-          "assignee": "Optimus",
-          "subtasks": [
-            {
-              "id": "task-8-sub-1",
-              "title": "Enable realtime",
-              "done": true
-            },
-            {
-              "id": "task-8-sub-2",
-              "title": "Document schema",
-              "done": true
-            }
+            { "id": "mem-1", "title": "Enable memorySearch", "done": true },
+            { "id": "mem-2", "title": "Configure auto-flush", "done": true }
           ]
         }
       ]
     }
   ],
-  "lastUpdated": "2026-01-28T18:30:00Z",
+  "lastUpdated": "2026-02-01T19:00:00Z",
   "meta": {
-    "version": 2
+    "version": 3,
+    "dashboards": [
+      { "id": "crypto-command", "path": "/home/ason__osta/clawd/dashboards/crypto-command/index.html", "size": "44KB" },
+      { "id": "morning-intel", "path": "/home/ason__osta/clawd/dashboards/morning-intel/index.html", "size": "46KB" },
+      { "id": "dubai-intel", "path": "/home/ason__osta/clawd/dashboards/dubai-intel/index.html", "size": "34KB" },
+      { "id": "linkedin-engine", "path": "/home/ason__osta/clawd/dashboards/linkedin-engine/index.html", "size": "41KB" },
+      { "id": "relationship-crm", "path": "/home/ason__osta/clawd/dashboards/relationship-crm/index.html", "size": "46KB" }
+    ]
   }
 }

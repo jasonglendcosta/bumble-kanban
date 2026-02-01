@@ -1,6 +1,6 @@
 export type Priority = "low" | "medium" | "high" | "critical";
 export type AgentStatus = "running" | "done" | "failed";
-export type Assignee = "Bumble" | "Optimus";
+export type Assignee = "Bumble" | "Optimus" | "Jason";
 
 export interface TimeTracking {
   isRunning: boolean;
@@ -25,6 +25,7 @@ export interface CardItem {
   timeTracking?: TimeTracking;
   assignee: Assignee;
   subtasks: Subtask[];
+  link?: string;
 }
 
 export interface Column {
@@ -33,11 +34,18 @@ export interface Column {
   cards: CardItem[];
 }
 
+export interface DashboardMeta {
+  id: string;
+  path: string;
+  size: string;
+}
+
 export interface BoardData {
   columns: Column[];
   lastUpdated: string;
   meta: {
     version: number;
+    dashboards?: DashboardMeta[];
   };
 }
 

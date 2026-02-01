@@ -14,9 +14,10 @@ const priorityStyles: Record<CardItemType["priority"], string> = {
   critical: "bg-rose-400/30 text-rose-200"
 };
 
-const assigneeMeta = {
+const assigneeMeta: Record<string, string> = {
   Bumble: "🐝",
-  Optimus: "🤖"
+  Optimus: "🤖",
+  Jason: "👤"
 };
 
 interface CardItemProps {
@@ -63,6 +64,8 @@ export default function CardItem({
         ? "text-amber-200"
         : "text-white/60";
 
+  const isDashboard = card.id.startsWith("dash-");
+
   useEffect(() => {
     if (!card.dueDate && !tracking.isRunning) {
       return;
@@ -81,7 +84,7 @@ export default function CardItem({
       animate={{ opacity: 1, y: 0 }}
       className={`glass-strong rounded-2xl border border-white/10 p-4 transition hover:border-accent/40 ${
         isDragging ? "opacity-70" : ""
-      }`}
+      } ${isDashboard ? "border-accent/30 bg-accent/5" : ""}`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex items-start gap-2">
@@ -106,7 +109,7 @@ export default function CardItem({
             {card.priority}
           </span>
           <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[0.6rem] text-white/70">
-            {assigneeMeta[card.assignee]} {card.assignee}
+            {assigneeMeta[card.assignee] || "👤"} {card.assignee}
           </span>
         </div>
       </div>
@@ -121,6 +124,21 @@ export default function CardItem({
           </span>
         ))}
       </div>
+
+      {/* Dashboard Open Button */}
+      {card.link && (
+        <div className="mt-3">
+          <a
+            href={card.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl border border-accent/40 bg-accent/20 px-4 py-2 text-xs font-semibold text-accent-glow transition hover:bg-accent/30 hover:shadow-glow"
+          >
+            <span>🚀</span>
+            <span>Open Dashboard</span>
+          </a>
+        </div>
+      )}
 
       <div className="mt-4 space-y-2 text-[0.7rem] text-white/70">
         <div className="flex items-center justify-between">
