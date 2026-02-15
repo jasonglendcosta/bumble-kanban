@@ -1,76 +1,64 @@
 {
-  "updated": "2026-02-15T17:35:00Z",
-  "focus": "bumblebot-only",
+  "updated": "2026-02-15T12:05:00Z",
+  "focus": "bumblebot-v7.1-live-trading",
   "active_tasks": [
     {
-      "id": "bumblebot-v7-live",
-      "title": "BumbleBot v7 — LIVE & WAITING FOR FIRST SIGNAL ✅",
+      "id": "bumblebot-v7.1-live",
+      "title": "BumbleBot v7.1 — NOW LIVE + TRADING ✅🔥",
       "priority": "critical",
       "status": "active",
-      "description": "v7 deployed 15:30 GMT+4. Config: conf≥60, pos size 10%, trail 1.2%, SL 1.5×ATR, maxPositions 20. Backtest validated (5 trades, 40% WR, 0.72 R:R, 0.08% max DD). Fresh $10K balance, 0 positions. Waiting for first conf≥60 signal (expected 24-48h). Dashboard: https://bumblebot.vercel.app",
+      "description": "v7.1 deployed 12:00 GMT+4. Emergency fixes: conf 60→50, VWAP bypass for FEAR_ACCUMULATION, rejection logging fixed. 2 positions open (XRPUSDT + DOGEUSDT LONG) in 3 min. Balance $9,549.77. Monitoring first exits to validate v7 exit strategy. Status: ✅ GREEN (no urgent flags).",
       "owner": "bumble",
-      "tags": ["trading", "live", "paper"],
-      "lastUpdate": "2026-02-15T17:35:00Z"
-    },
-    {
-      "id": "memory-system-complete",
-      "title": "Memory System — Quick Reference Added ✅",
-      "priority": "high",
-      "status": "complete",
-      "description": "Added Quick Reference table at TOP of MEMORY.md. Lists all projects, GitHub repos, live URLs, local paths. BumbleBot infra (PM2, API, sync scripts, cron IDs). Fixed the 'forgetting problem' by front-loading critical info.",
-      "owner": "bumble",
-      "tags": ["memory", "system"],
-      "completedDate": "2026-02-15T16:55:00Z"
+      "tags": ["trading", "live", "paper", "monitoring"],
+      "lastUpdate": "2026-02-15T12:05:00Z",
+      "metrics": {
+        "balance": 9549.77,
+        "positions": 2,
+        "trades": 2,
+        "win_rate": 0,
+        "unrealized_pnl": -0.84
+      }
     }
   ],
   "monitoring": [
     {
+      "id": "bumblebot-first-exits",
+      "title": "Monitor: First Exit Performance (Next 30 min)",
+      "status": "active",
+      "description": "Waiting for first XRPUSDT/DOGEUSDT closes. Will show if v7 trailing stop + chandelier + partial TP work as designed. Critical to validate exit strategy.",
+      "owner": "bumble"
+    },
+    {
       "id": "market-intelligence",
       "title": "Market Intelligence Cron",
       "status": "active",
-      "description": "Runs every 4h (ID: fc5eeacc). F&G Index: 9/100 (Extreme Fear). BTC $69,739, ETH $2,085, XRP $1.47, SOL $87.26. Sentiment ✅ aligned with bot.",
-      "owner": "bumble",
-      "lastCheck": "2026-02-15T16:00:00Z"
-    },
-    {
-      "id": "bumblebot-monitor",
-      "title": "BumbleBot Monitor Cron",
-      "status": "active",
-      "description": "Runs every 2h (ID: 37d5501c). Checks: process health, balance, P&L, open positions, trade count.",
-      "owner": "bumble",
-      "lastCheck": "2026-02-15T17:00:00Z"
+      "description": "Runs every 4h (ID: fc5eeacc). F&G Index: 9/100 (Extreme Fear). Sentiment ✅ aligned with bot.",
+      "owner": "bumble"
     }
   ],
   "on_hold": [
     {
       "id": "apex-platform",
       "title": "APEX Platform",
-      "reason": "Jason's call Feb 14 23:09 — full focus to BumbleBot until v7 proves itself",
-      "status": "UI 100% complete, Supabase schema + 4 API endpoints coded. Ready to resume."
+      "reason": "Jason's call Feb 14 23:09 — full focus to BumbleBot until v7.1 proves itself"
     }
   ],
   "completed": [
     {
-      "id": "config-maxPositions-bump",
-      "title": "maxPositions: 6 → 20",
-      "date": "2026-02-15T17:35:00Z",
-      "commit": "78e0d96"
+      "id": "bumblebot-v7.1-emergency-fixes",
+      "title": "v7.1 Emergency Fixes (Conf + VWAP + Logging)",
+      "date": "2026-02-15T12:00:00Z",
+      "commits": ["2572bee", "6483685"]
     },
     {
-      "id": "memory-quick-ref",
-      "title": "Add Quick Reference to MEMORY.md",
-      "date": "2026-02-15T16:55:00Z"
+      "id": "bumblebot-first-trade",
+      "title": "First BumbleBot v7.1 Trade: XRPUSDT LONG",
+      "date": "2026-02-15T12:02:59Z"
     },
     {
-      "id": "git-push-all",
-      "title": "Push bumblebot + dashboard + brain repos",
-      "date": "2026-02-15T16:50:00Z",
-      "commits": ["8e77a51", "530bc91", "4679c58"]
-    },
-    {
-      "id": "bumblebot-v7-deploy",
-      "title": "BumbleBot v7 Deployed to Production",
-      "date": "2026-02-15T15:30:00Z"
+      "id": "bumblebot-second-trade",
+      "title": "Second BumbleBot v7.1 Trade: DOGEUSDT LONG",
+      "date": "2026-02-15T12:03:58Z"
     }
   ]
 }
