@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-15T16:55:00Z",
+  "updated": "2026-02-15T17:35:00Z",
   "focus": "bumblebot-only",
   "active_tasks": [
     {
@@ -7,18 +7,20 @@
       "title": "BumbleBot v7 — LIVE & WAITING FOR FIRST SIGNAL ✅",
       "priority": "critical",
       "status": "active",
-      "description": "v7 deployed 15:30 GMT+4. Config: conf≥60, pos size 10%, trail 1.2%, SL 1.5×ATR. Backtest validated (5 trades, 40% WR, 0.72 R:R, 0.08% max DD). Fresh $10K balance, 0 positions. Waiting for first conf≥60 signal (expected 24-48h). Dashboard: https://bumblebot.vercel.app",
+      "description": "v7 deployed 15:30 GMT+4. Config: conf≥60, pos size 10%, trail 1.2%, SL 1.5×ATR, maxPositions 20. Backtest validated (5 trades, 40% WR, 0.72 R:R, 0.08% max DD). Fresh $10K balance, 0 positions. Waiting for first conf≥60 signal (expected 24-48h). Dashboard: https://bumblebot.vercel.app",
       "owner": "bumble",
-      "tags": ["trading", "live", "paper"]
+      "tags": ["trading", "live", "paper"],
+      "lastUpdate": "2026-02-15T17:35:00Z"
     },
     {
-      "id": "memory-system-overhaul",
+      "id": "memory-system-complete",
       "title": "Memory System — Quick Reference Added ✅",
       "priority": "high",
       "status": "complete",
-      "description": "Added Quick Reference table at TOP of MEMORY.md. Lists all projects, GitHub repos, live URLs, local paths. BumbleBot infra (PM2, API, sync scripts, cron IDs). Fixed the 'forgetting problem' by front-loading critical info. No more fumbling for URLs.",
+      "description": "Added Quick Reference table at TOP of MEMORY.md. Lists all projects, GitHub repos, live URLs, local paths. BumbleBot infra (PM2, API, sync scripts, cron IDs). Fixed the 'forgetting problem' by front-loading critical info.",
       "owner": "bumble",
-      "tags": ["memory", "system"]
+      "tags": ["memory", "system"],
+      "completedDate": "2026-02-15T16:55:00Z"
     }
   ],
   "monitoring": [
@@ -27,14 +29,16 @@
       "title": "Market Intelligence Cron",
       "status": "active",
       "description": "Runs every 4h (ID: fc5eeacc). F&G Index: 9/100 (Extreme Fear). BTC $69,739, ETH $2,085, XRP $1.47, SOL $87.26. Sentiment ✅ aligned with bot.",
-      "owner": "bumble"
+      "owner": "bumble",
+      "lastCheck": "2026-02-15T16:00:00Z"
     },
     {
       "id": "bumblebot-monitor",
       "title": "BumbleBot Monitor Cron",
       "status": "active",
       "description": "Runs every 2h (ID: 37d5501c). Checks: process health, balance, P&L, open positions, trade count.",
-      "owner": "bumble"
+      "owner": "bumble",
+      "lastCheck": "2026-02-15T17:00:00Z"
     }
   ],
   "on_hold": [
@@ -46,6 +50,12 @@
     }
   ],
   "completed": [
+    {
+      "id": "config-maxPositions-bump",
+      "title": "maxPositions: 6 → 20",
+      "date": "2026-02-15T17:35:00Z",
+      "commit": "78e0d96"
+    },
     {
       "id": "memory-quick-ref",
       "title": "Add Quick Reference to MEMORY.md",
