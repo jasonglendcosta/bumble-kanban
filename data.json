@@ -1,40 +1,35 @@
 {
-  "updated": "2026-02-15T22:45:00Z",
-  "status": "🟢 CONFIG CORRECTED — Dashboard Live, Awaiting First Signal",
-  "config_adjustments": {
-    "minCompositeScore": "65 → 45 ✅",
-    "maxPositions": "5 → 10 ✅",
-    "timestamp": "22:17-22:30 GMT+4"
-  },
-  "bot_status": {
-    "version": "v7.1.2",
-    "mode": "PAPER (simulated)",
-    "balance": "$10,000",
-    "positions": "0",
-    "trades": "0",
-    "regime": "FEAR_ACCUMULATION",
-    "uptime": "24 minutes (fresh restart)",
-    "safety_gates": "ALL ACTIVE (LONG-only, burst, cooldowns)"
-  },
-  "signal_quality": {
-    "current": "Low (warmup phase post-restart)",
-    "expected": "Composite 45+ once EMAs stabilize",
-    "next_evaluation": "On each 5-min candle close",
-    "note": "EMAs warming up from 199 seeded candles"
-  },
-  "market_context": {
-    "fear_greed": "8/100 (Extreme Fear)",
-    "sentiment": "Bearish capitulation",
-    "optimal_for": "LONG-only accumulation"
-  },
-  "dashboard": "https://bumblebot.vercel.app",
-  "git_commits": [
-    "9b6e332: minCompositeScore 65→45",
-    "7fd73a6: maxPositions 5→10"
+  "active": [
+    {
+      "id": "v730-build",
+      "title": "BumbleBot v7.3.0 — God Trader Full Tier 1",
+      "status": "in-progress",
+      "priority": "critical",
+      "eta": "01:30 GMT+4"
+    }
   ],
-  "next_milestone": "First LONG position open (expect 22:30-23:00 GMT+4)",
-  "monitoring": {
-    "hourly_sentiment_cron": "fc5eeacc (23:00 UTC firing next)",
-    "adaptive_pilot_cron": "Next 23:00 GMT+4 cycle"
-  }
+  "completed": [
+    {
+      "id": "v720-deploy",
+      "title": "v7.2.0 — God Trader Initial Upgrades",
+      "completed": "2026-02-16 00:51 GMT+4"
+    },
+    {
+      "id": "v720-version",
+      "title": "Update version across repos",
+      "completed": "2026-02-16 00:57 GMT+4"
+    },
+    {
+      "id": "master-doc-analysis",
+      "title": "Master Study Doc Super Analysis",
+      "completed": "2026-02-16 01:10 GMT+4"
+    }
+  ],
+  "next": [
+    {
+      "id": "tier2-build",
+      "title": "Tier 2 — Price-structure regime, RVOL filter, Breakout strategy",
+      "eta": "2026-02-16 02:00 GMT+4"
+    }
+  ]
 }
