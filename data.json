@@ -1,64 +1,46 @@
 {
-  "updated": "2026-02-15T12:05:00Z",
-  "focus": "bumblebot-v7.1-live-trading",
-  "active_tasks": [
-    {
-      "id": "bumblebot-v7.1-live",
-      "title": "BumbleBot v7.1 — NOW LIVE + TRADING ✅🔥",
-      "priority": "critical",
-      "status": "active",
-      "description": "v7.1 deployed 12:00 GMT+4. Emergency fixes: conf 60→50, VWAP bypass for FEAR_ACCUMULATION, rejection logging fixed. 2 positions open (XRPUSDT + DOGEUSDT LONG) in 3 min. Balance $9,549.77. Monitoring first exits to validate v7 exit strategy. Status: ✅ GREEN (no urgent flags).",
-      "owner": "bumble",
-      "tags": ["trading", "live", "paper", "monitoring"],
-      "lastUpdate": "2026-02-15T12:05:00Z",
-      "metrics": {
-        "balance": 9549.77,
-        "positions": 2,
-        "trades": 2,
-        "win_rate": 0,
-        "unrealized_pnl": -0.84
-      }
-    }
+  "updated": "2026-02-15T16:01:00Z",
+  "status": "🔴 CRITICAL - CIRCUIT BREAKER HALTED",
+  "critical_incident": {
+    "title": "BumbleBot v7.1 — Trading Halted (Circuit Breaker Triggered)",
+    "timestamp": "2026-02-15T12:09:31Z",
+    "duration": "1 hour (resumes ~13:09 GMT+4)",
+    "reason": "5 consecutive stop-loss hits"
+  },
+  "incident_details": {
+    "trades_opened": 6,
+    "trades_closed_with_sl": 6,
+    "total_realized_loss_usd": -5.08,
+    "total_realized_loss_pct": -0.51,
+    "balance": 9995.92,
+    "timeline": [
+      "12:03 XRPUSDT LONG opened",
+      "12:05 XRPUSDT LONG closed SL -$0.96 → LOSS #1",
+      "12:04 DOGEUSDT LONG opened",
+      "12:07 DOGEUSDT LONG closed SL -$0.73 → LOSS #2",
+      "12:07 SUIUSDT, BNBUSDT, INJUSDT, ADAUSDT opened (batch)",
+      "12:08 SUIUSDT closed SL -$0.64 → LOSS #3",
+      "12:08 BNBUSDT closed SL -$0.41 → LOSS #4",
+      "12:09 INJUSDT closed SL -$0.59 → LOSS #5 → CIRCUIT BREAKER TRIGGERED"
+    ],
+    "root_causes": [
+      "6 simultaneous entry positions (no concurrency limit)",
+      "All entries at unfavorable prices",
+      "Very short hold times (1-4 min) → SL hit before exits could work",
+      "Position sizing 2.25% × 6 = 13.5% total risk",
+      "Entry logic weak (why all bad entries?)"
+    ]
+  },
+  "actions_required": [
+    "Jason review: Why 6 concurrent entries?",
+    "Fix max concurrent positions (suggest 2-3/min)",
+    "Audit entry price validation",
+    "Consider position sizing adjustment",
+    "May need conf threshold increase (60-55) or other filter tightening"
   ],
-  "monitoring": [
-    {
-      "id": "bumblebot-first-exits",
-      "title": "Monitor: First Exit Performance (Next 30 min)",
-      "status": "active",
-      "description": "Waiting for first XRPUSDT/DOGEUSDT closes. Will show if v7 trailing stop + chandelier + partial TP work as designed. Critical to validate exit strategy.",
-      "owner": "bumble"
-    },
-    {
-      "id": "market-intelligence",
-      "title": "Market Intelligence Cron",
-      "status": "active",
-      "description": "Runs every 4h (ID: fc5eeacc). F&G Index: 9/100 (Extreme Fear). Sentiment ✅ aligned with bot.",
-      "owner": "bumble"
-    }
-  ],
-  "on_hold": [
-    {
-      "id": "apex-platform",
-      "title": "APEX Platform",
-      "reason": "Jason's call Feb 14 23:09 — full focus to BumbleBot until v7.1 proves itself"
-    }
-  ],
-  "completed": [
-    {
-      "id": "bumblebot-v7.1-emergency-fixes",
-      "title": "v7.1 Emergency Fixes (Conf + VWAP + Logging)",
-      "date": "2026-02-15T12:00:00Z",
-      "commits": ["2572bee", "6483685"]
-    },
-    {
-      "id": "bumblebot-first-trade",
-      "title": "First BumbleBot v7.1 Trade: XRPUSDT LONG",
-      "date": "2026-02-15T12:02:59Z"
-    },
-    {
-      "id": "bumblebot-second-trade",
-      "title": "Second BumbleBot v7.1 Trade: DOGEUSDT LONG",
-      "date": "2026-02-15T12:03:58Z"
-    }
-  ]
+  "telegram": {
+    "critical_alert": "msg 1872",
+    "timestamp": "2026-02-15T16:01:00Z"
+  },
+  "resume": "Trading auto-resumes 2026-02-15T13:09:00Z (1h pause)"
 }
