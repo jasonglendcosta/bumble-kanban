@@ -1,26 +1,40 @@
 {
-  "updated": "2026-02-15T18:15:00Z",
-  "status": "🟢 LONG-ONLY MODE LIVE — Phase 2.5 Complete",
-  "phase_2_complete": {
-    "wl_widened": "1.5x → 2.0x ATR ✅",
-    "min_hold": "5 min enforced ✅",
-    "dead_zone": "02-10 UTC ✅",
-    "golden_window": "1.25x boost ✅",
-    "trailing_activation": "1.5% ✅"
+  "updated": "2026-02-15T22:45:00Z",
+  "status": "🟢 CONFIG CORRECTED — Dashboard Live, Awaiting First Signal",
+  "config_adjustments": {
+    "minCompositeScore": "65 → 45 ✅",
+    "maxPositions": "5 → 10 ✅",
+    "timestamp": "22:17-22:30 GMT+4"
   },
-  "phase_2_5_long_only": {
-    "status": "DEPLOYED ✅",
-    "strategies_audited": 6,
-    "short_signals_eliminated": "All",
-    "global_gate": "Gate 2b active",
-    "config": "longOnly=true"
-  },
-  "current_bot_status": {
-    "balance": "$9,836.12",
-    "positions": "2/10",
+  "bot_status": {
+    "version": "v7.1.2",
+    "mode": "PAPER (simulated)",
+    "balance": "$10,000",
+    "positions": "0",
+    "trades": "0",
     "regime": "FEAR_ACCUMULATION",
-    "all_positions": "LONG",
-    "dashboard": "https://bumblebot.vercel.app"
+    "uptime": "24 minutes (fresh restart)",
+    "safety_gates": "ALL ACTIVE (LONG-only, burst, cooldowns)"
   },
-  "next_milestone": "Phase 2.5 testing 48h — measure vs Phase 1 baseline (55.2% WR)"
+  "signal_quality": {
+    "current": "Low (warmup phase post-restart)",
+    "expected": "Composite 45+ once EMAs stabilize",
+    "next_evaluation": "On each 5-min candle close",
+    "note": "EMAs warming up from 199 seeded candles"
+  },
+  "market_context": {
+    "fear_greed": "8/100 (Extreme Fear)",
+    "sentiment": "Bearish capitulation",
+    "optimal_for": "LONG-only accumulation"
+  },
+  "dashboard": "https://bumblebot.vercel.app",
+  "git_commits": [
+    "9b6e332: minCompositeScore 65→45",
+    "7fd73a6: maxPositions 5→10"
+  ],
+  "next_milestone": "First LONG position open (expect 22:30-23:00 GMT+4)",
+  "monitoring": {
+    "hourly_sentiment_cron": "fc5eeacc (23:00 UTC firing next)",
+    "adaptive_pilot_cron": "Next 23:00 GMT+4 cycle"
+  }
 }
