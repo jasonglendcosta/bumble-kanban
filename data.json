@@ -1,35 +1,35 @@
 {
   "active": [
     {
-      "id": "v730-build",
-      "title": "BumbleBot v7.3.0 — God Trader Full Tier 1",
-      "status": "in-progress",
-      "priority": "critical",
-      "eta": "01:30 GMT+4"
+      "id": "apex-deploy",
+      "title": "APEX Platform — Deploy to Vercel",
+      "status": "ready",
+      "priority": "high",
+      "progress": "Build complete, deployment pending"
     }
   ],
   "completed": [
     {
-      "id": "v720-deploy",
-      "title": "v7.2.0 — God Trader Initial Upgrades",
-      "completed": "2026-02-16 00:51 GMT+4"
+      "id": "v730-build",
+      "title": "BumbleBot v7.3.0 — God Trader Full Tier 1",
+      "completed": "2026-02-16 01:28 GMT+4"
     },
     {
-      "id": "v720-version",
-      "title": "Update version across repos",
-      "completed": "2026-02-16 00:57 GMT+4"
+      "id": "apex-ui",
+      "title": "APEX Platform — All UI Components + Pages",
+      "completed": "2026-02-16 02:02 GMT+4"
     },
     {
-      "id": "master-doc-analysis",
-      "title": "Master Study Doc Super Analysis",
-      "completed": "2026-02-16 01:10 GMT+4"
+      "id": "adaptive-pilot-setup",
+      "title": "Hourly Adaptive Pilot — 3 cycles complete",
+      "completed": "2026-02-16 02:00 GMT+4"
     }
   ],
   "next": [
     {
-      "id": "tier2-build",
-      "title": "Tier 2 — Price-structure regime, RVOL filter, Breakout strategy",
-      "eta": "2026-02-16 02:00 GMT+4"
+      "id": "tier2-bumblebot",
+      "title": "BumbleBot Tier 2 — Price-structure regime, RVOL, Breakout strategy",
+      "eta": "2026-02-16 03:00 GMT+4"
     }
   ]
 }
