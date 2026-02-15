@@ -1,26 +1,26 @@
 {
-  "updated": "2026-02-15T17:21:00Z",
-  "status": "🧪 TESTING PHASE 1 — Full Analysis Complete",
-  "testing_milestone": {
-    "report": "TESTING-REPORT.md",
-    "trades_analyzed": 248,
-    "win_rate": "55.2%",
-    "pnl": "+$51.20",
-    "best_feature": "Trailing stops (73.6% WR, +$70.46)",
-    "biggest_issue": "SL too tight (-$75.87)",
-    "golden_window": "14:00-15:00 UTC (96%+ WR)"
+  "updated": "2026-02-15T18:15:00Z",
+  "status": "🟢 LONG-ONLY MODE LIVE — Phase 2.5 Complete",
+  "phase_2_complete": {
+    "wl_widened": "1.5x → 2.0x ATR ✅",
+    "min_hold": "5 min enforced ✅",
+    "dead_zone": "02-10 UTC ✅",
+    "golden_window": "1.25x boost ✅",
+    "trailing_activation": "1.5% ✅"
   },
-  "phase_2_priorities": [
-    "Widen SL: 1.5x → 2.0x ATR",
-    "Min hold time: 5-10 min",
-    "Block 08-10 UTC dead zone",
-    "Remove PEPE",
-    "LONG-only during FEAR"
-  ],
-  "current_status": {
-    "balance": "$9,774.95",
-    "positions": 1,
-    "open_trade": "DOGEUSDT SHORT @ $0.1097",
-    "circuit_breaker": "CLEAR"
-  }
+  "phase_2_5_long_only": {
+    "status": "DEPLOYED ✅",
+    "strategies_audited": 6,
+    "short_signals_eliminated": "All",
+    "global_gate": "Gate 2b active",
+    "config": "longOnly=true"
+  },
+  "current_bot_status": {
+    "balance": "$9,836.12",
+    "positions": "2/10",
+    "regime": "FEAR_ACCUMULATION",
+    "all_positions": "LONG",
+    "dashboard": "https://bumblebot.vercel.app"
+  },
+  "next_milestone": "Phase 2.5 testing 48h — measure vs Phase 1 baseline (55.2% WR)"
 }
