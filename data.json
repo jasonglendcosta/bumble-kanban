@@ -1,219 +1,62 @@
 {
-  "lastUpdated": "2026-02-09T13:43:00Z",
-  "activeSessions": [
+  "updated": "2026-02-15T14:02:00Z",
+  "focus": "bumblebot-only",
+  "active_tasks": [
     {
-      "id": "crypto-dashboard-cost-basis",
-      "title": "📊 Crypto Dashboard — Cost-Basis P&L Feature ✅",
-      "status": "deployed",
-      "deployedAt": "2026-02-09T13:30:00Z",
-      "deployUrl": "https://crypto-dashboard-wheat-five.vercel.app",
-      "notes": "Added expandable open positions with FIFO cost-basis analysis. Shows unrealized P&L vs cost basis, avg entry price, all-time realized P&L. Lazy-loads trade history, caches for instant re-expand. Responsive for mobile.",
-      "stats": {
-        "componentLinesAdded": 150,
-        "cssRulesAdded": 25,
-        "featureCompleteness": "100%",
-        "vercelDeploy": "auto"
-      }
+      "id": "bumblebot-v4-critical",
+      "title": "BumbleBot v4 — CRITICAL COLLAPSE TO 20% WIN RATE 🔴🔴🔴",
+      "priority": "critical",
+      "status": "emergency",
+      "description": "CRITICAL (14:01): Win rate COLLAPSED to 20% (was 35% at 12:01). Recent 4W/16L. P&L declining (-$9.64). Balance $9,739.26 (-$4.80). 3+ losing trades in 2 hours. Entry logic FAILED. Telegram alert sent (msgId 1870). IMMEDIATE ACTION REQUIRED: PAUSE or emergency stop-loss.",
+      "owner": "bumble"
     },
     {
-      "id": "trade-oracle-phase1-status",
-      "title": "🔮 Trade Oracle Phase 1 — OPERATIONAL ✅",
-      "status": "in-progress",
-      "progress": "100%",
-      "startedAt": "2026-02-07T00:09:00Z",
-      "notes": "5 pages complete: Command Center, Crypto Arena, Trade Log, Analytics, Markets. Live Binance integration + FIFO P&L engine. Building on port 3333. Phase 2 (Stock Fortress/IBKR) pending.",
-      "stats": {
-        "pagesBuilt": 5,
-        "linesOfCode": 1800,
-        "apiEndpoints": 4,
-        "buildStatus": "clean"
-      },
-      "nextStep": "Port cost-basis feature to Crypto Arena + build Stock Fortress"
+      "id": "bumblebot-live-trades",
+      "title": "BumbleBot v6 — First Live Trade",
+      "priority": "critical",
+      "status": "active",
+      "description": "Bot running clean (0 positions) and ready. Waiting for first conf ≥50 signal. Expected within minutes. Monitor: https://bumblebot.vercel.app",
+      "owner": "bumble"
     },
     {
-      "id": "sop-v3-completion",
-      "title": "📋 SOP v3 Deep Comparison — 7/13 COMPLETE",
-      "status": "in-progress",
-      "progress": "54%",
-      "startedAt": "2026-02-06T21:00:00Z",
-      "notes": "7 departments completed (CRM, External Affairs, Lands, MIS, Marketing, Channels, Procurement). 6 pending: HR, Inventory, Leads, Development, Legal, Sales Operations. All input files ready. Switched to manual analysis after subagent failures on large files.",
-      "stats": {
-        "departmentsComplete": 7,
-        "departmentsPending": 6,
-        "wordDocsGenerated": 7,
-        "emailDraftsGenerated": 7,
-        "gapsIdentified": 542
-      },
-      "nextStep": "Complete remaining 6 departments manually"
+      "id": "bumblebot-backtest-multi",
+      "title": "Multi-Symbol Backtest (5 symbols × 2 weeks)",
+      "priority": "critical",
+      "status": "next",
+      "description": "Run backtest engine across ETHUSDT, BTCUSDT, SOLUSDT, XRPUSDT, BNBUSDT for 2026-01-28 to 2026-02-14. Find optimal confidence threshold + strategy weights.",
+      "owner": "bumble"
     },
     {
-      "id": "crypto-trade-tracker",
-      "title": "⚡ Crypto Trade Tracker — DEPLOYED TO VERCEL ✅",
-      "status": "deployed",
-      "startedAt": "2026-02-06T13:14:00Z",
-      "deployUrl": "https://crypto-dashboard-wheat-five.vercel.app",
-      "notes": "Live Binance trade tracker with FIFO P&L matching. Tracks realized/unrealized P&L, fees, 20 trading pairs. Dev server live at localhost:3333. Auto-refresh every 30s.",
-      "stats": {
-        "filesModified": 3,
-        "linesOfCode": 7000,
-        "apiEndpoints": 2,
-        "tradingPairs": 20,
-        "refreshInterval": "30s"
-      },
-      "deployedAt": "2026-02-06T13:32:00Z"
-    },
-    {
-      "id": "gateway-stability-fix",
-      "title": "🔧 Gateway Stability RESOLVED",
-      "status": "completed",
-      "completedAt": "2026-02-06T02:19:00Z",
-      "notes": "Deleted conflicting clawdbot.service, cleaned 11 stale locks, created gateway-doctor.sh watchdog running every 10min via cron. No more disconnections.",
-      "stats": {
-        "issuesSolved": 1,
-        "scriptsCreated": 1,
-        "cronJobsAdded": 1
-      }
-    },
-    {
-      "id": "bumble-command-center",
-      "title": "🐝 Bumble Command Center",
-      "status": "deployed",
-      "deployedAt": "2026-02-05T07:25:00Z",
-      "deployUrl": "https://command-center-eight-iota.vercel.app",
-      "notes": "9 tabs, 3,500+ LOC, deployed to Vercel. Jason tested - UI working beautifully. Gateway needs local dev or public expose.",
-      "stats": {
-        "filesCreated": 15,
-        "linesOfCode": 3500,
-        "typeScriptCoverage": "100%",
-        "vercelUrl": "command-center-eight-iota.vercel.app"
-      }
-    },
+      "id": "bumblebot-live-mode",
+      "title": "Switch to Live Mode (Real Binance)",
+      "priority": "high",
+      "status": "pending",
+      "description": "When paper performance is solid (Sharpe >1.5, win rate >60%, conf threshold optimized), switch to real Binance execution.",
+      "owner": "bumble"
+    }
+  ],
+  "on_hold": [
     {
       "id": "apex-platform",
-      "title": "🎯 APEX Platform Phase 4",
-      "status": "in-deploy",
-      "notes": "18 components, 7,500+ LOC. Fixed missing deps (framer-motion, react-pdf). Fixed TS exports. Final deploy in progress.",
-      "stats": {
-        "filesCreated": 18,
-        "linesOfCode": 7500,
-        "typeScriptCoverage": "100%",
-        "components": "18"
-      }
-    },
-    {
-      "id": "legal-sop-v2",
-      "title": "📋 Legal SOP Comparison v2 - FIXED",
-      "status": "completed",
-      "completedAt": "2026-02-06T09:19:00Z",
-      "notes": "Redo Legal dept comparison based on combined document. 76 gaps identified (20 CRITICAL, 26 HIGH, 20 MEDIUM, 10 LOW). Word report + email draft generated.",
-      "stats": {
-        "gapsIdentified": 76,
-        "criticalGaps": 20,
-        "filesGenerated": 2
-      }
-    },
-    {
-      "id": "codex-5.3-upgrade",
-      "title": "🚀 Codex CLI 5.3 + Config Update",
-      "status": "completed",
-      "completedAt": "2026-02-06T09:19:00Z",
-      "notes": "Updated Codex CLI 0.53.0 → 0.98.0. GPT-5.3-Codex released by OpenAI (25% faster, state-of-art). Config locked to 5.3 with high reasoning permanently.",
-      "stats": {
-        "cliVersionOld": "0.53.0",
-        "cliVersionNew": "0.98.0",
-        "modelLocked": "gpt-5.3-codex"
-      }
-    },
-    {
-      "id": "god-tier-cleanup",
-      "title": "🧹 Removed 'God-tier' Terminology (172 replacements)",
-      "status": "completed",
-      "completedAt": "2026-02-06T10:15:00Z",
-      "notes": "Cleaned all 13 dept comparison reports + emails. Replaced 'GOD-tier SOP' → 'Benchmark SOP' for professional delivery to dept heads.",
-      "stats": {
-        "departmentsAffected": 13,
-        "totalReplacements": 172,
-        "wordDocs": 170,
-        "emailDrafts": 2
-      }
-    },
-    {
-      "id": "short-email-drafts-final",
-      "title": "📧 Generated 13 Short Email Drafts + Signature Updates",
-      "status": "completed",
-      "completedAt": "2026-02-06T12:15:00Z",
-      "notes": "All 13 short email drafts generated across all departments. Signature updated from 'Strategy Department' to 'Jason D'Costa'. Ready to send.",
-      "stats": {
-        "emailsGenerated": 13,
-        "processesDocumented": 61,
-        "departmentsCovered": 13,
-        "signatureUpdated": "All 13"
-      }
-    },
-    {
-      "id": "morning-brief",
-      "title": "☕ Morning Brief (8:00 AM Ping)",
-      "status": "sent",
-      "sentAt": "2026-02-06T08:00:00Z",
-      "notes": "Sent overnight accomplishments summary to Jason. SOP engine, APEX dashboard, 26 files generated.",
-      "telegramMessageId": "754"
-    },
-    {
-      "id": "quantum-stocks",
-      "title": "📊 Daily Stock Scan",
-      "status": "completed",
-      "completedAt": "2026-02-05T06:06:00Z",
-      "notes": "RGTI, IONQ, QUBT, QBTS prices tracked. 3 catalyst plays identified.",
-      "stats": {
-        "tickersTracked": 4,
-        "catalystPlaysFound": 3
-      }
+      "title": "APEX Platform",
+      "reason": "Jason's call Feb 14 23:09 — full focus to BumbleBot"
     }
   ],
-  "upcomingTasks": [
+  "completed": [
     {
-      "priority": "critical",
-      "title": "APEX Platform: Final Build + Vercel Deploy",
-      "dueAt": "2026-02-05T09:00:00Z",
-      "status": "in-progress"
+      "id": "bumblebot-force-close",
+      "title": "Force Close All 7 v4 Positions",
+      "date": "2026-02-14T23:21:00Z"
     },
     {
-      "priority": "high",
-      "title": "Test APEX locally: Add customer → Reserve unit",
-      "dueAt": "2026-02-05T10:00:00Z",
-      "status": "pending"
+      "id": "bumblebot-v6-deploy",
+      "title": "BumbleBot v6 (VWAP + Session + Kelly + Backtest)",
+      "date": "2026-02-14T22:50:00Z"
     },
     {
-      "priority": "high",
-      "title": "Founders demo: Command Center + APEX live test",
-      "dueAt": "2026-02-05T12:00:00Z",
-      "status": "pending"
+      "id": "backtest-engine",
+      "title": "Backtest Engine (4 modules, 1393 lines)",
+      "date": "2026-02-14T22:15:00Z"
     }
-  ],
-  "completedSessions": [
-    {
-      "id": "sop-deep-comparison-final",
-      "title": "🎯 SOP Deep Comparison — ALL BATCHES COMPLETE",
-      "status": "completed",
-      "completedAt": "2026-02-06T11:46:00Z",
-      "notes": "Final run completed with 285 KB deep_comparison_data.json. All 61 processes across 13 departments analyzed with gap priorities. Ready for Word doc generation + department emails.",
-      "stats": {
-        "departmentsProcessed": 13,
-        "processesAnalyzed": 61,
-        "dataFileSize": "285 KB",
-        "benchmarkSOPs": 43,
-        "deliverables": "13 Word + 13 emails"
-      }
-    }
-  ],
-  "summary": {
-    "projectsCompleted": 6,
-    "projectsInProgress": 1,
-    "sessionsToday": 9,
-    "gapsAnalyzed": 152,
-    "emailDraftsGenerated": 27,
-    "replacementsMade": 172,
-    "deploymentsLive": 2,
-    "sopProcessesAnalyzed": 61
-  }
+  ]
 }
