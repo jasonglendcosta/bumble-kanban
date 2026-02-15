@@ -1,25 +1,27 @@
 {
-  "updated": "2026-02-15T16:46:00Z",
-  "status": "🟡 TRADING RESUMED (post-circuit-breaker)",
-  "bot_status": {
-    "circuit_breaker_halted": false,
-    "pause_expired": true,
-    "balance": 9995.92,
-    "positions": 0,
-    "trades_total": 6
-  },
+  "updated": "2026-02-15T17:08:00Z",
+  "status": "✅ TRADING LIVE — All fixes deployed",
   "incident": {
-    "title": "BumbleBot v7.1 Circuit Breaker (Resolved)",
+    "title": "BumbleBot v7.1 Circuit Breaker (RESOLVED)",
     "timestamp": "2026-02-15T12:09:31Z",
-    "halted_until": "2026-02-15T13:09:31Z",
-    "status": "✅ EXPIRED - Trading Resumed",
-    "total_loss": -5.08,
-    "trades_closed": 6
+    "status": "✅ FIXED + TRADING RESUMED",
+    "fixes_applied": [
+      "maxPositions: 20 → 3",
+      "globalCooldown: 30s → 60s",
+      "positionSize: 10% → 5%",
+      "minConfidence: 50 → 55",
+      "Burst protection: max 2/5min"
+    ],
+    "state_reset": "Wiped trade history, CB cleared, $10K balance, 0 trades",
+    "live_time": "2026-02-15T13:08:00Z",
+    "signal_warmup": "Expected approval 13:10-13:15 GMT+4"
   },
-  "next_actions": [
-    "Jason review: Position concurrency limits",
-    "Audit entry price logic (why all bad entries)",
-    "Consider conf threshold adjustment",
-    "Validate trading resumes smoothly post-halt"
-  ]
+  "safety_checks": {
+    "circuit_breaker": "✅ CLEAR",
+    "position_concurrency": "✅ LIMITED (max 3)",
+    "burst_protection": "✅ ACTIVE (max 2/5min)",
+    "minimum_confidence": "✅ RAISED (55%)",
+    "balance": "$10,000.00",
+    "positions": "0/3"
+  }
 }
