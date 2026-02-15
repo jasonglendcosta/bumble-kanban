@@ -1,46 +1,25 @@
 {
-  "updated": "2026-02-15T16:01:00Z",
-  "status": "🔴 CRITICAL - CIRCUIT BREAKER HALTED",
-  "critical_incident": {
-    "title": "BumbleBot v7.1 — Trading Halted (Circuit Breaker Triggered)",
-    "timestamp": "2026-02-15T12:09:31Z",
-    "duration": "1 hour (resumes ~13:09 GMT+4)",
-    "reason": "5 consecutive stop-loss hits"
-  },
-  "incident_details": {
-    "trades_opened": 6,
-    "trades_closed_with_sl": 6,
-    "total_realized_loss_usd": -5.08,
-    "total_realized_loss_pct": -0.51,
+  "updated": "2026-02-15T16:46:00Z",
+  "status": "🟡 TRADING RESUMED (post-circuit-breaker)",
+  "bot_status": {
+    "circuit_breaker_halted": false,
+    "pause_expired": true,
     "balance": 9995.92,
-    "timeline": [
-      "12:03 XRPUSDT LONG opened",
-      "12:05 XRPUSDT LONG closed SL -$0.96 → LOSS #1",
-      "12:04 DOGEUSDT LONG opened",
-      "12:07 DOGEUSDT LONG closed SL -$0.73 → LOSS #2",
-      "12:07 SUIUSDT, BNBUSDT, INJUSDT, ADAUSDT opened (batch)",
-      "12:08 SUIUSDT closed SL -$0.64 → LOSS #3",
-      "12:08 BNBUSDT closed SL -$0.41 → LOSS #4",
-      "12:09 INJUSDT closed SL -$0.59 → LOSS #5 → CIRCUIT BREAKER TRIGGERED"
-    ],
-    "root_causes": [
-      "6 simultaneous entry positions (no concurrency limit)",
-      "All entries at unfavorable prices",
-      "Very short hold times (1-4 min) → SL hit before exits could work",
-      "Position sizing 2.25% × 6 = 13.5% total risk",
-      "Entry logic weak (why all bad entries?)"
-    ]
+    "positions": 0,
+    "trades_total": 6
   },
-  "actions_required": [
-    "Jason review: Why 6 concurrent entries?",
-    "Fix max concurrent positions (suggest 2-3/min)",
-    "Audit entry price validation",
-    "Consider position sizing adjustment",
-    "May need conf threshold increase (60-55) or other filter tightening"
-  ],
-  "telegram": {
-    "critical_alert": "msg 1872",
-    "timestamp": "2026-02-15T16:01:00Z"
+  "incident": {
+    "title": "BumbleBot v7.1 Circuit Breaker (Resolved)",
+    "timestamp": "2026-02-15T12:09:31Z",
+    "halted_until": "2026-02-15T13:09:31Z",
+    "status": "✅ EXPIRED - Trading Resumed",
+    "total_loss": -5.08,
+    "trades_closed": 6
   },
-  "resume": "Trading auto-resumes 2026-02-15T13:09:00Z (1h pause)"
+  "next_actions": [
+    "Jason review: Position concurrency limits",
+    "Audit entry price logic (why all bad entries)",
+    "Consider conf threshold adjustment",
+    "Validate trading resumes smoothly post-halt"
+  ]
 }
