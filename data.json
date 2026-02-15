@@ -1,37 +1,39 @@
 {
-  "updated": "2026-02-15T14:02:00Z",
+  "updated": "2026-02-15T16:55:00Z",
   "focus": "bumblebot-only",
   "active_tasks": [
     {
-      "id": "bumblebot-v4-critical",
-      "title": "BumbleBot v4 — CRITICAL COLLAPSE TO 20% WIN RATE 🔴🔴🔴",
-      "priority": "critical",
-      "status": "emergency",
-      "description": "CRITICAL (14:01): Win rate COLLAPSED to 20% (was 35% at 12:01). Recent 4W/16L. P&L declining (-$9.64). Balance $9,739.26 (-$4.80). 3+ losing trades in 2 hours. Entry logic FAILED. Telegram alert sent (msgId 1870). IMMEDIATE ACTION REQUIRED: PAUSE or emergency stop-loss.",
-      "owner": "bumble"
-    },
-    {
-      "id": "bumblebot-live-trades",
-      "title": "BumbleBot v6 — First Live Trade",
+      "id": "bumblebot-v7-live",
+      "title": "BumbleBot v7 — LIVE & WAITING FOR FIRST SIGNAL ✅",
       "priority": "critical",
       "status": "active",
-      "description": "Bot running clean (0 positions) and ready. Waiting for first conf ≥50 signal. Expected within minutes. Monitor: https://bumblebot.vercel.app",
-      "owner": "bumble"
+      "description": "v7 deployed 15:30 GMT+4. Config: conf≥60, pos size 10%, trail 1.2%, SL 1.5×ATR. Backtest validated (5 trades, 40% WR, 0.72 R:R, 0.08% max DD). Fresh $10K balance, 0 positions. Waiting for first conf≥60 signal (expected 24-48h). Dashboard: https://bumblebot.vercel.app",
+      "owner": "bumble",
+      "tags": ["trading", "live", "paper"]
     },
     {
-      "id": "bumblebot-backtest-multi",
-      "title": "Multi-Symbol Backtest (5 symbols × 2 weeks)",
-      "priority": "critical",
-      "status": "next",
-      "description": "Run backtest engine across ETHUSDT, BTCUSDT, SOLUSDT, XRPUSDT, BNBUSDT for 2026-01-28 to 2026-02-14. Find optimal confidence threshold + strategy weights.",
-      "owner": "bumble"
-    },
-    {
-      "id": "bumblebot-live-mode",
-      "title": "Switch to Live Mode (Real Binance)",
+      "id": "memory-system-overhaul",
+      "title": "Memory System — Quick Reference Added ✅",
       "priority": "high",
-      "status": "pending",
-      "description": "When paper performance is solid (Sharpe >1.5, win rate >60%, conf threshold optimized), switch to real Binance execution.",
+      "status": "complete",
+      "description": "Added Quick Reference table at TOP of MEMORY.md. Lists all projects, GitHub repos, live URLs, local paths. BumbleBot infra (PM2, API, sync scripts, cron IDs). Fixed the 'forgetting problem' by front-loading critical info. No more fumbling for URLs.",
+      "owner": "bumble",
+      "tags": ["memory", "system"]
+    }
+  ],
+  "monitoring": [
+    {
+      "id": "market-intelligence",
+      "title": "Market Intelligence Cron",
+      "status": "active",
+      "description": "Runs every 4h (ID: fc5eeacc). F&G Index: 9/100 (Extreme Fear). BTC $69,739, ETH $2,085, XRP $1.47, SOL $87.26. Sentiment ✅ aligned with bot.",
+      "owner": "bumble"
+    },
+    {
+      "id": "bumblebot-monitor",
+      "title": "BumbleBot Monitor Cron",
+      "status": "active",
+      "description": "Runs every 2h (ID: 37d5501c). Checks: process health, balance, P&L, open positions, trade count.",
       "owner": "bumble"
     }
   ],
@@ -39,24 +41,26 @@
     {
       "id": "apex-platform",
       "title": "APEX Platform",
-      "reason": "Jason's call Feb 14 23:09 — full focus to BumbleBot"
+      "reason": "Jason's call Feb 14 23:09 — full focus to BumbleBot until v7 proves itself",
+      "status": "UI 100% complete, Supabase schema + 4 API endpoints coded. Ready to resume."
     }
   ],
   "completed": [
     {
-      "id": "bumblebot-force-close",
-      "title": "Force Close All 7 v4 Positions",
-      "date": "2026-02-14T23:21:00Z"
+      "id": "memory-quick-ref",
+      "title": "Add Quick Reference to MEMORY.md",
+      "date": "2026-02-15T16:55:00Z"
     },
     {
-      "id": "bumblebot-v6-deploy",
-      "title": "BumbleBot v6 (VWAP + Session + Kelly + Backtest)",
-      "date": "2026-02-14T22:50:00Z"
+      "id": "git-push-all",
+      "title": "Push bumblebot + dashboard + brain repos",
+      "date": "2026-02-15T16:50:00Z",
+      "commits": ["8e77a51", "530bc91", "4679c58"]
     },
     {
-      "id": "backtest-engine",
-      "title": "Backtest Engine (4 modules, 1393 lines)",
-      "date": "2026-02-14T22:15:00Z"
+      "id": "bumblebot-v7-deploy",
+      "title": "BumbleBot v7 Deployed to Production",
+      "date": "2026-02-15T15:30:00Z"
     }
   ]
 }
