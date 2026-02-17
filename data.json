@@ -1,35 +1,59 @@
 {
   "active": [
     {
-      "id": "apex-deploy",
-      "title": "APEX Platform — Deploy to Vercel",
-      "status": "ready",
+      "id": "apex-on-hold",
+      "title": "APEX Platform — Awaiting Jason Approval",
+      "status": "on-hold",
       "priority": "high",
-      "progress": "Build complete, deployment pending"
+      "progress": "Build 100% complete, all UI + API endpoints ready"
+    },
+    {
+      "id": "god-trader-live",
+      "title": "GOD TRADER — Bybit Testnet Signals",
+      "status": "signal-only",
+      "priority": "high",
+      "progress": "LIVE on testnet, awaiting API keys for live trading"
     }
   ],
   "completed": [
     {
-      "id": "v730-build",
-      "title": "BumbleBot v7.3.0 — God Trader Full Tier 1",
-      "completed": "2026-02-16 01:28 GMT+4"
+      "id": "bumblebot-decommissioned",
+      "title": "BumbleBot — DECOMMISSIONED",
+      "completed": "2026-02-16 20:51 GMT+4"
+    },
+    {
+      "id": "memory-phase-1",
+      "title": "OpenClaw Memory Architecture — Phase 1 Complete",
+      "completed": "2026-02-17 00:30 GMT+4"
     },
     {
       "id": "apex-ui",
       "title": "APEX Platform — All UI Components + Pages",
       "completed": "2026-02-16 02:02 GMT+4"
-    },
-    {
-      "id": "adaptive-pilot-setup",
-      "title": "Hourly Adaptive Pilot — 3 cycles complete",
-      "completed": "2026-02-16 02:00 GMT+4"
     }
   ],
-  "next": [
-    {
-      "id": "tier2-bumblebot",
-      "title": "BumbleBot Tier 2 — Price-structure regime, RVOL, Breakout strategy",
-      "eta": "2026-02-16 03:00 GMT+4"
-    }
-  ]
+  "lastUpdate": "2026-02-17T00:50:00Z",
+  "latestAdaptiveCycle": {
+    "timestamp": "2026-02-16T12:01:19Z",
+    "balance": "$10,003.09",
+    "pnl": "+$0.67 (cycle) / +$74.11 (session)",
+    "winRate": "50% (3W/3L)",
+    "riskReward": "2.24",
+    "fng": "12/100",
+    "regime": "FEAR_ACCUMULATION",
+    "adjustment": "None — parameters OK (avg hold 29min, TP/Chandelier split balanced)",
+    "cyclesCompleted": 9,
+    "consecutiveStableCycles": "9 (04:00-12:01 GST, 8+ hours uninterrupted)",
+    "status": "✅ LIVE"
+  },
+  "activeSession": {
+    "timestamp": "2026-02-16T12:00:00Z",
+    "activity": "Teams Meeting Recording + Transcription",
+    "status": "In Progress",
+    "details": "OBS audio recording active. Gemini 2.5 Pro transcription ready. Awaiting file path."
+  },
+  "linkedinRefresh": {
+    "timestamp": "2026-02-16T07:00:20Z",
+    "status": "❌ FAILED — Browser extension not attached"
+  }
 }
