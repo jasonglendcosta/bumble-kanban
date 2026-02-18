@@ -9,10 +9,10 @@
     },
     {
       "id": "god-trader-live",
-      "title": "GOD TRADER — Bybit Testnet Signals",
-      "status": "signal-only",
+      "title": "GOD TRADER v1.3 — Paper Trading + Filters Loosened",
+      "status": "live-paper",
       "priority": "high",
-      "progress": "LIVE on testnet, awaiting API keys for live trading"
+      "progress": "Paper trading engine LIVE (6 trades, +$130.78, 50% WR). Filters loosened (Vol $1M, Spread 0.5%). Watchlist: 5 symbols (BTC, ETH, XRP, MNT, DOT). Dashboard fully transparent. Ready for live API keys."
     }
   ],
   "completed": [
@@ -32,7 +32,7 @@
       "completed": "2026-02-16 02:02 GMT+4"
     }
   ],
-  "lastUpdate": "2026-02-17T00:50:00Z",
+  "lastUpdate": "2026-02-18T10:01:00Z",
   "latestAdaptiveCycle": {
     "timestamp": "2026-02-16T12:01:19Z",
     "balance": "$10,003.09",
