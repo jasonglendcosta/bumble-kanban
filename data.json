@@ -9,10 +9,10 @@
     },
     {
       "id": "god-trader-live",
-      "title": "GOD TRADER v1.3 — Paper Trading + Filters Loosened",
-      "status": "live-paper",
+      "title": "GOD TRADER v1.3 — ⚠️ State Reset Issue (Fixing)",
+      "status": "investigating",
       "priority": "high",
-      "progress": "Paper trading engine LIVE (6 trades, +$130.78, 50% WR). Filters loosened (Vol $1M, Spread 0.5%). Watchlist: 5 symbols (BTC, ETH, XRP, MNT, DOT). Dashboard fully transparent. Ready for live API keys."
+      "progress": "Paper state lost during PM2 restart. Equity: $1987.75 (was $2130.78). 2 closed trades (0W-2L). 2 open positions (ETH red, ADA at TP1). Issue: paper_state.json needs backup/version control before config changes. Filters still loosened (Vol $1M, Spread 0.5%)."
     }
   ],
   "completed": [
