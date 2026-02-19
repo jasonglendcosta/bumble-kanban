@@ -1,38 +1,52 @@
 {
   "active": [
     {
-      "id": "apex-on-hold",
-      "title": "APEX Platform — Awaiting Jason Approval",
-      "status": "on-hold",
-      "priority": "high",
-      "progress": "Build 100% complete, all UI + API endpoints ready"
+      "id": "apex-deployment",
+      "title": "APEX Platform \u2014 READY FOR VERCEL DEPLOYMENT",
+      "status": "pending-approval",
+      "priority": "urgent",
+      "progress": "Build 100% complete. Path A: Deploy UI+mock (5 min). Path B: Full Supabase backend (20-30 min). All components tested, zero TS errors, Strategy Theme styled. Awaiting Jason's deployment decision. Telegram: messages 2110-2111."
     },
     {
       "id": "god-trader-live",
-      "title": "GOD TRADER v1.3 — ⚠️ State Reset Issue (Fixing)",
+      "title": "GOD TRADER v1.3 \u2014 \u26a0\ufe0f State Reset Issue (Fixing)",
       "status": "investigating",
       "priority": "high",
       "progress": "Paper state lost during PM2 restart. Equity: $1987.75 (was $2130.78). 2 closed trades (0W-2L). 2 open positions (ETH red, ADA at TP1). Issue: paper_state.json needs backup/version control before config changes. Filters still loosened (Vol $1M, Spread 0.5%)."
+    },
+    {
+      "id": "god-trader-sentiment",
+      "title": "\ud83d\udd2e GOD TRADER \u2014 LunarCrush Sentiment Integration",
+      "status": "deployed",
+      "priority": "high",
+      "progress": "\u2705 LIVE (Feb 19 11:28). LunarCrush CLI + sentiment.py + bot integration complete. Parses price, %, AltRank, sentiment, themes from free-tier AI endpoints. Confidence multiplier (0.5x-1.5x) on every signal. Veto system, divergence detection wired. First live scan: BTC=STRONG_BULLISH (83%, AltRank #39), ETH=STRONG_BULLISH (88%). Free tier: 4 req/min \u2192 10-min cache, 5-min cooldown. GitHub: commits 56de55e + 98d8450."
+    },
+    {
+      "id": "last30days-skill",
+      "title": "last30days v2.1 Skill \u2014 \u2705 OPERATIONAL (Gemini CLI backend)",
+      "status": "deployed",
+      "priority": "medium",
+      "progress": "\u2705 FULLY CONFIGURED. Researches topics from last 30 days across Reddit (Gemini 3 Pro), X, YouTube, web. Generates copy-paste prompts. Uses GEMINI_CLI=true in ~/.config/last30days/.env (no OpenAI key needed). Custom gemini_reddit.py module is drop-in compatible with original. First call takes 2-3 min on Gemini 3 Pro capacity, then faster."
     }
   ],
   "completed": [
     {
       "id": "bumblebot-decommissioned",
-      "title": "BumbleBot — DECOMMISSIONED",
+      "title": "BumbleBot \u2014 DECOMMISSIONED",
       "completed": "2026-02-16 20:51 GMT+4"
     },
     {
       "id": "memory-phase-1",
-      "title": "OpenClaw Memory Architecture — Phase 1 Complete",
+      "title": "OpenClaw Memory Architecture \u2014 Phase 1 Complete",
       "completed": "2026-02-17 00:30 GMT+4"
     },
     {
       "id": "apex-ui",
-      "title": "APEX Platform — All UI Components + Pages",
+      "title": "APEX Platform \u2014 All UI Components + Pages",
       "completed": "2026-02-16 02:02 GMT+4"
     }
   ],
-  "lastUpdate": "2026-02-18T10:01:00Z",
+  "lastUpdate": "2026-02-19T11:28:00Z",
   "latestAdaptiveCycle": {
     "timestamp": "2026-02-16T12:01:19Z",
     "balance": "$10,003.09",
@@ -41,10 +55,10 @@
     "riskReward": "2.24",
     "fng": "12/100",
     "regime": "FEAR_ACCUMULATION",
-    "adjustment": "None — parameters OK (avg hold 29min, TP/Chandelier split balanced)",
+    "adjustment": "None \u2014 parameters OK (avg hold 29min, TP/Chandelier split balanced)",
     "cyclesCompleted": 9,
     "consecutiveStableCycles": "9 (04:00-12:01 GST, 8+ hours uninterrupted)",
-    "status": "✅ LIVE"
+    "status": "\u2705 LIVE"
   },
   "activeSession": {
     "timestamp": "2026-02-16T12:00:00Z",
@@ -54,6 +68,6 @@
   },
   "linkedinRefresh": {
     "timestamp": "2026-02-16T07:00:20Z",
-    "status": "❌ FAILED — Browser extension not attached"
+    "status": "\u274c FAILED \u2014 Browser extension not attached"
   }
 }
