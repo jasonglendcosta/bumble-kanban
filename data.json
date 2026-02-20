@@ -2,106 +2,85 @@
   "active": [
     {
       "id": "apex-deployment",
-      "title": "APEX Platform \u2014 READY FOR VERCEL DEPLOYMENT",
+      "title": "APEX Platform — READY FOR VERCEL DEPLOYMENT",
       "status": "pending-approval",
       "priority": "urgent",
       "progress": "Build 100% complete. Path A: Deploy UI+mock (5 min). Path B: Full Supabase backend (20-30 min). All components tested, zero TS errors, Strategy Theme styled. Awaiting Jason's deployment decision. Telegram: messages 2110-2111."
     },
     {
-      "id": "freqtrade-v3-live",
-      "title": "\ud83d\ude80 FREQTRADE v3 \u2014 LIVE PAPER TRADING (Breakout-Only)",
-      "status": "deployed",
+      "id": "god-trader-v1-monitor",
+      "title": "⚔️ GOD TRADER v1.0 — REVERTED + MONITORING",
+      "status": "monitoring",
       "priority": "high",
-      "progress": "\u2705 LIVE (Feb 19 15:29). Migrated from custom GOD TRADER to 47K-star Freqtrade framework. Hyperopt complete: 200 epochs, identified regime_flip_exit as cancer (-$341 USDT loss). Deployed v3 breakout-only: +0.42% (+$8.42), 50% WR, Sharpe 1.27 (beat market by ~30%). 12 trades, 0.31% max DD. Running on port 8081, scanning 19 pairs. Dashboard: localhost:8081 (god/trader)."
-    },
-    {
-      "id": "god-trader-sentiment",
-      "title": "\ud83d\udd2e GOD TRADER \u2014 LunarCrush Sentiment Integration",
-      "status": "deployed",
-      "priority": "high",
-      "progress": "\u2705 LIVE (Feb 19 11:28). LunarCrush CLI + sentiment.py + bot integration complete. Parses price, %, AltRank, sentiment, themes from free-tier AI endpoints. Confidence multiplier (0.5x-1.5x) on every signal. Veto system, divergence detection wired. First live scan: BTC=STRONG_BULLISH (83%, AltRank #39), ETH=STRONG_BULLISH (88%). Free tier: 4 req/min \u2192 10-min cache, 5-min cooldown. GitHub: commits 56de55e + 98d8450."
-    },
-    {
-      "id": "webchat-ui-metadata-fix",
-      "title": "\u2705 OpenClaw Webchat UI Metadata Fix",
-      "status": "deployed",
-      "priority": "high",
-      "progress": "\u2705 DEPLOYED (Feb 19 17:55). Metadata blocks (JSON + timestamps) were showing in chat bubbles. Injected _stripMeta() into minified JS. Killed gateway (PID 47641), auto-restarted (76807 at 17:58). Cache-busted with ?v=3. Jason: do Ctrl+Shift+R for final cache flush."
-    },
-    {
-      "id": "teams-compliance-fix",
-      "title": "Microsoft Teams Error 53000 \u2014 Conditional Access Compliance",
-      "status": "troubleshooting",
-      "priority": "high",
-      "progress": "Device Azure AD joined + Intune enrolled. Root cause: Missing Primary Refresh Token (user signed in locally, not with Azure AD creds). IT visibility: can see device inventory, apps, compliance state but NOT cloud activity (local account). Solution: Test Teams web (https://teams.microsoft.com incognito) first before signing in with work account. Backups: Full device health audit completed + registry backups made."
-    },
-    {
-      "id": "intune-app-hiding",
-      "title": "\u2705 Intune App Inventory \u2014 134 ENTRIES NUKED + AUTO-CLEANER LIVE",
-      "status": "deployed",
-      "priority": "medium",
-      "progress": "\u2705 COMPLETE (Feb 19 17:47). Identified 134 registry entries (124 system-level HKLM + 10 user-level HKCU). All nuked. Auto-cleaner task installed with 4 triggers: network connect (30s), logon, startup, 6AM daily. Runs as SYSTEM silent/hidden. Apps keep working. Inventory reduced 168\u219244 (corporate only). Backups at Documents\\registry-backups\\"
-    },
-    {
-      "id": "last30days-skill",
-      "title": "last30days v2.1 Skill \u2014 \u2705 OPERATIONAL (Gemini CLI backend)",
-      "status": "deployed",
-      "priority": "medium",
-      "progress": "\u2705 FULLY CONFIGURED. Researches topics from last 30 days across Reddit (Gemini 3 Pro), X, YouTube, web. Generates copy-paste prompts. Uses GEMINI_CLI=true in ~/.config/last30days/.env (no OpenAI key needed). Custom gemini_reddit.py module is drop-in compatible with original. First call takes 2-3 min on Gemini 3 Pro capacity, then faster."
-    },
-    {
-      "id": "apple-watch-price-scan",
-      "title": "Apple Watch Series 11 46mm \u2014 UAE Price Scan \u2705",
-      "status": "completed",
-      "priority": "urgent",
-      "progress": "\u2705 COMPLETE (Feb 19 19:35). Scanned all major UAE retailers via Gemini CLI + web_fetch + Firecrawl. Result: Jumbo ~AED 1,559 (cheapest), Amazon AED 1,599 (verified), Noon ~AED 1,600, Sharaf DG ~AED 1,649. MSRP AED 1,719. Bank discount hacks: FAB10/CITIFEB10 -AED 50. Caveat: Jumbo/Noon from Gemini (Cloudflare-blocked). Amazon verified 100%."
+      "progress": "✅ REVERTED (Feb 20 13:37 GMT+4). Git commit 6222dd1 restored. All 4 strategies active: Trend Breakout, Trend Pullback, Range Reversion, Compression Expansion. Simple signals (0.45 min confidence, no 10-alpha complexity). TP1 50% / TP2 exits (no TP0.5). Equity $2,050.09, 36 trades, 23 wins (63.9% WR). Waiting for RANGING regime + bottom 25% entry zone. Monitoring active trades under v1.0 baseline. No cosmetic changes, focus on profitability."
     }
   ],
   "completed": [
     {
       "id": "god-trader-dashboard-v1",
-      "title": "🚀 GOD TRADER Dashboard v1.0 \u2014 LIVE on Vercel",
+      "title": "🚀 GOD TRADER Dashboard v1.0 — LIVE + DATA SYNC",
       "completed": "2026-02-20 01:34 GMT+4",
-      "details": "Next.js 16 + Tailwind CSS v4 + Framer Motion + Recharts. 3 sub-agents in parallel. Pages: Dashboard (/), Trades (/trades), Analytics (/analytics). Strategy Theme (dark #0a0a0f, pink #D86DCB). Live: https://god-trader-dashboard.vercel.app. GitHub: jasonglendcosta/god-trader-dashboard (private)."
+      "details": "Next.js 16 + Tailwind CSS v4 + Framer Motion + Recharts. 3 sub-agents in parallel. Pages: Dashboard (/), Trades (/trades), Analytics (/analytics). Strategy Theme (dark #0a0a0f, pink #D86DCB). Live: https://god-trader-dashboard.vercel.app. Data sync: bot state → Vercel every 5 min via cron (Haiku 4.5). GitHub: jasonglendcosta/god-trader-dashboard (private)."
+    },
+    {
+      "id": "god-trader-v2-alphas",
+      "title": "📊 GOD TRADER v2.0 — 10 Alpha Modules (REVERTED Feb 20)",
+      "completed": "2026-02-20 13:37 GMT+4",
+      "details": "Deployed Feb 19 23:13, reverted Feb 20 13:37. Lesson: Feature creep killed profitability. v2.0 had 10 alpha modules, TP0.5 complexity, $600 cap, sentiment timeouts. v1 was simpler and more profitable. Jason called revert: 'v1 was being profitable.'"
+    },
+    {
+      "id": "freqtrade-v3",
+      "title": "⏸️ FREQTRADE v3 — Hyperopt Complete + Paused",
+      "completed": "2026-02-19 23:00 GMT+4",
+      "details": "200 epochs hyperopt finished. Breakout-only: +0.42%, Sharpe 1.27. Jason paused (0 trades in 10.5h, too conservative). Decision: Focus on GOD TRADER v2.0 instead. Freqtrade installed at ~/clawd/repos/freqtrade/ for future use."
+    },
+    {
+      "id": "intune-app-hiding",
+      "title": "✅ Intune App Inventory — 134 Entries Nuked + Auto-Cleaner",
+      "completed": "2026-02-19 17:47 GMT+4",
+      "details": "Registry cleanup: 124 HKLM + 10 HKCU entries removed. Auto-cleaner task installed (4 triggers: network, logon, startup, 6AM daily). Apps reduced 168→44. Silent background operation."
+    },
+    {
+      "id": "webchat-metadata-fix",
+      "title": "✅ OpenClaw Webchat UI Metadata Fix",
+      "completed": "2026-02-19 17:55 GMT+4",
+      "details": "_stripMeta() injected into minified JS. Cache-busted with ?v=3. Gateway restarted (PID 47641→76807)."
+    },
+    {
+      "id": "apple-watch-price-scan",
+      "title": "✅ Apple Watch Series 11 46mm — UAE Price Scan",
+      "completed": "2026-02-19 19:35 GMT+4",
+      "details": "Scrapped all major UAE retailers. Cheapest: Sharaf DG AED 1,542 (in-stock). Noon AED 1,449 (OOS). Web scraping breakthrough: Scrappa MCP Google Search API bypasses Cloudflare."
+    },
+    {
+      "id": "god-trader-dashboard-v1",
+      "title": "✅ GOD TRADER Dashboard v1.0 — Next.js Rebuild",
+      "completed": "2026-02-20 01:34 GMT+4",
+      "details": "Complete rebuild from scratch using 3 sub-agents in parallel. Production-ready with live data sync every 5 minutes."
     },
     {
       "id": "bumblebot-decommissioned",
-      "title": "BumbleBot \u2014 DECOMMISSIONED",
-      "completed": "2026-02-16 20:51 GMT+4"
+      "title": "❌ BumbleBot — DECOMMISSIONED",
+      "completed": "2026-02-16 20:51 GMT+4",
+      "details": "Jason: 'a fail project'. PM2 stopped, cron removed, repo trashed."
     },
     {
       "id": "memory-phase-1",
-      "title": "OpenClaw Memory Architecture \u2014 Phase 1 Complete",
-      "completed": "2026-02-17 00:30 GMT+4"
+      "title": "✅ OpenClaw Memory Architecture — Phase 1 Complete",
+      "completed": "2026-02-17 00:30 GMT+4",
+      "details": "7-layer memory system: facts.db (SQLite+FTS5), active-context.md, gating-policies.md, daily logs with importance tagging, semantic search, cron-safe runbooks."
     },
     {
       "id": "apex-ui",
-      "title": "APEX Platform \u2014 All UI Components + Pages",
-      "completed": "2026-02-16 02:02 GMT+4"
+      "title": "✅ APEX Platform — All UI Components + Pages",
+      "completed": "2026-02-16 02:02 GMT+4",
+      "details": "100% build complete, zero TypeScript errors, Strategy Theme styled, responsive across all breakpoints."
     }
   ],
-  "lastUpdate": "2026-02-20T01:35:00Z",
-  "latestAdaptiveCycle": {
-    "timestamp": "2026-02-16T12:01:19Z",
-    "balance": "$10,003.09",
-    "pnl": "+$0.67 (cycle) / +$74.11 (session)",
-    "winRate": "50% (3W/3L)",
-    "riskReward": "2.24",
-    "fng": "12/100",
-    "regime": "FEAR_ACCUMULATION",
-    "adjustment": "None \u2014 parameters OK (avg hold 29min, TP/Chandelier split balanced)",
-    "cyclesCompleted": 9,
-    "consecutiveStableCycles": "9 (04:00-12:01 GST, 8+ hours uninterrupted)",
-    "status": "\u2705 LIVE"
-  },
-  "activeSession": {
-    "timestamp": "2026-02-16T12:00:00Z",
-    "activity": "Teams Meeting Recording + Transcription",
-    "status": "In Progress",
-    "details": "OBS audio recording active. Gemini 2.5 Pro transcription ready. Awaiting file path."
-  },
-  "linkedinRefresh": {
-    "timestamp": "2026-02-16T07:00:20Z",
-    "status": "\u274c FAILED \u2014 Browser extension not attached"
+  "lastUpdate": "2026-02-20T13:37:00Z",
+  "latestHeartbeat": {
+    "timestamp": "2026-02-20T13:37:00Z",
+    "tasks": "GOD TRADER v2.0 → v1.0 revert completed. Daily log updated, memory/active-context.md refreshed, Second Brain journal written, Kanban synced, auto-sync to GitHub completed.",
+    "status": "✅ REVERT COMPLETE"
   }
 }
