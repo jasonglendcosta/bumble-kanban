@@ -1,86 +1,56 @@
 {
-  "active": [
+  "session_id": "heartbeat-921pm-feb21",
+  "timestamp": "2026-02-21T21:20:00Z",
+  "milestones": [
     {
-      "id": "apex-deployment",
-      "title": "APEX Platform — READY FOR VERCEL DEPLOYMENT",
-      "status": "pending-approval",
-      "priority": "urgent",
-      "progress": "Build 100% complete. Path A: Deploy UI+mock (5 min). Path B: Full Supabase backend (20-30 min). All components tested, zero TS errors, Strategy Theme styled. Awaiting Jason's deployment decision. Telegram: messages 2110-2111."
+      "title": "✅ Mission Control Dashboard Live",
+      "status": "LIVE",
+      "equity": "localhost:3000",
+      "changes": "6 features deployed, gateway auth issue blocking real data"
     },
     {
-      "id": "god-trader-v1-monitor",
-      "title": "⚔️ GOD TRADER v1.0 — REVERTED + MONITORING",
-      "status": "monitoring",
+      "title": "⏸️ GOD TRADER Kill Switch Active",
+      "status": "PAUSED",
+      "equity": "$1,884.47 (-5.78% from reset)",
+      "changes": "Hit 3% daily drawdown at 10:04 AM, 4 open positions held"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "god-trader-decision",
+      "title": "GOD TRADER: Close 4 open positions or let them ride?",
+      "status": "waiting",
       "priority": "high",
-      "progress": "✅ REVERTED (Feb 20 13:37 GMT+4). Git commit 6222dd1 restored. All 4 strategies active: Trend Breakout, Trend Pullback, Range Reversion, Compression Expansion. Simple signals (0.45 min confidence, no 10-alpha complexity). TP1 50% / TP2 exits (no TP0.5). Equity $2,050.09, 36 trades, 23 wins (63.9% WR). Waiting for RANGING regime + bottom 25% entry zone. Monitoring active trades under v1.0 baseline. No cosmetic changes, focus on profitability."
+      "note": "Kill switch since 10:04 AM, equity $1,884.47, awaiting Jason decision"
+    },
+    {
+      "id": "mission-control-gateway",
+      "title": "Fix Mission Control gateway connectivity (expose 0.0.0.0:18789)",
+      "status": "ready",
+      "priority": "high",
+      "note": "All 6 pages live, but features return empty data until gateway auth works"
+    },
+    {
+      "id": "intune-task-deploy",
+      "title": "Intune Stealth Cleaner: Deploy scheduled task (needs admin PS)",
+      "status": "blocked",
+      "priority": "medium",
+      "note": "Jason must run 1 admin PowerShell command to complete"
+    },
+    {
+      "id": "apex-deploy",
+      "title": "APEX Platform deployment decision",
+      "status": "ready",
+      "priority": "medium",
+      "note": "Build complete, awaiting Jason decision to deploy to Vercel"
+    },
+    {
+      "id": "ai-model-scan",
+      "title": "AI Model Release Intelligence Brief",
+      "status": "complete",
+      "priority": "low",
+      "note": "✅ Delivered: Gemini 3.1 Pro is vaporware (404 on CLI), other releases confirmed"
     }
   ],
-  "completed": [
-    {
-      "id": "god-trader-dashboard-v1",
-      "title": "🚀 GOD TRADER Dashboard v1.0 — LIVE + DATA SYNC",
-      "completed": "2026-02-20 01:34 GMT+4",
-      "details": "Next.js 16 + Tailwind CSS v4 + Framer Motion + Recharts. 3 sub-agents in parallel. Pages: Dashboard (/), Trades (/trades), Analytics (/analytics). Strategy Theme (dark #0a0a0f, pink #D86DCB). Live: https://god-trader-dashboard.vercel.app. Data sync: bot state → Vercel every 5 min via cron (Haiku 4.5). GitHub: jasonglendcosta/god-trader-dashboard (private)."
-    },
-    {
-      "id": "god-trader-v2-alphas",
-      "title": "📊 GOD TRADER v2.0 — 10 Alpha Modules (REVERTED Feb 20)",
-      "completed": "2026-02-20 13:37 GMT+4",
-      "details": "Deployed Feb 19 23:13, reverted Feb 20 13:37. Lesson: Feature creep killed profitability. v2.0 had 10 alpha modules, TP0.5 complexity, $600 cap, sentiment timeouts. v1 was simpler and more profitable. Jason called revert: 'v1 was being profitable.'"
-    },
-    {
-      "id": "freqtrade-v3",
-      "title": "⏸️ FREQTRADE v3 — Hyperopt Complete + Paused",
-      "completed": "2026-02-19 23:00 GMT+4",
-      "details": "200 epochs hyperopt finished. Breakout-only: +0.42%, Sharpe 1.27. Jason paused (0 trades in 10.5h, too conservative). Decision: Focus on GOD TRADER v2.0 instead. Freqtrade installed at ~/clawd/repos/freqtrade/ for future use."
-    },
-    {
-      "id": "intune-app-hiding",
-      "title": "✅ Intune App Inventory — 134 Entries Nuked + Auto-Cleaner",
-      "completed": "2026-02-19 17:47 GMT+4",
-      "details": "Registry cleanup: 124 HKLM + 10 HKCU entries removed. Auto-cleaner task installed (4 triggers: network, logon, startup, 6AM daily). Apps reduced 168→44. Silent background operation."
-    },
-    {
-      "id": "webchat-metadata-fix",
-      "title": "✅ OpenClaw Webchat UI Metadata Fix",
-      "completed": "2026-02-19 17:55 GMT+4",
-      "details": "_stripMeta() injected into minified JS. Cache-busted with ?v=3. Gateway restarted (PID 47641→76807)."
-    },
-    {
-      "id": "apple-watch-price-scan",
-      "title": "✅ Apple Watch Series 11 46mm — UAE Price Scan",
-      "completed": "2026-02-19 19:35 GMT+4",
-      "details": "Scrapped all major UAE retailers. Cheapest: Sharaf DG AED 1,542 (in-stock). Noon AED 1,449 (OOS). Web scraping breakthrough: Scrappa MCP Google Search API bypasses Cloudflare."
-    },
-    {
-      "id": "god-trader-dashboard-v1",
-      "title": "✅ GOD TRADER Dashboard v1.0 — Next.js Rebuild",
-      "completed": "2026-02-20 01:34 GMT+4",
-      "details": "Complete rebuild from scratch using 3 sub-agents in parallel. Production-ready with live data sync every 5 minutes."
-    },
-    {
-      "id": "bumblebot-decommissioned",
-      "title": "❌ BumbleBot — DECOMMISSIONED",
-      "completed": "2026-02-16 20:51 GMT+4",
-      "details": "Jason: 'a fail project'. PM2 stopped, cron removed, repo trashed."
-    },
-    {
-      "id": "memory-phase-1",
-      "title": "✅ OpenClaw Memory Architecture — Phase 1 Complete",
-      "completed": "2026-02-17 00:30 GMT+4",
-      "details": "7-layer memory system: facts.db (SQLite+FTS5), active-context.md, gating-policies.md, daily logs with importance tagging, semantic search, cron-safe runbooks."
-    },
-    {
-      "id": "apex-ui",
-      "title": "✅ APEX Platform — All UI Components + Pages",
-      "completed": "2026-02-16 02:02 GMT+4",
-      "details": "100% build complete, zero TypeScript errors, Strategy Theme styled, responsive across all breakpoints."
-    }
-  ],
-  "lastUpdate": "2026-02-20T17:44:00Z",
-  "latestHeartbeat": {
-    "timestamp": "2026-02-20T17:44:00Z",
-    "tasks": "🔧 Gemini CLI re-authenticated with Google One AI Pro (Jason pasted auth code). Wrapper script fixed (pipe through cat). Web search verified working (Bitcoin price query). GOD TRADER v1.0 + Bigger Guns + 4 critical bug fixes on real Binance data. Dashboard live, all systems nominal. Daily log updated, MEMORY.md refreshed, Second Brain journal written, Kanban synced, auto-sync to GitHub completed.",
-    "status": "✅ GEMINI CLI FIXED + GOD TRADER READY"
-  }
+  "last_heartbeat": "2026-02-21T21:20:00Z"
 }
