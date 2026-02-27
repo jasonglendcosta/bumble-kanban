@@ -1,6 +1,6 @@
 {
-  "session_id": "heartbeat-0802am-feb27",
-  "timestamp": "2026-02-27T08:02:00Z",
+  "session_id": "work-session-feb27-evening",
+  "timestamp": "2026-02-27T20:57:00Z",
   "milestones": [
     {
       "title": "✅ Daily Stock Scan (Gemini CLI Re-run)",
@@ -49,6 +49,18 @@
       "status": "LIVE_MONITORING",
       "date": "Feb 23, 15:32 GMT+4",
       "changes": "35 pairs, 10 max open, loosened params. Paper trading active. Monitoring execution profitability."
+    },
+    {
+      "title": "🔱 GOD SIGNAL STOCKS — Critical Bug Fixes",
+      "status": "IN_PROGRESS",
+      "date": "Feb 27, 20:45 GMT+4",
+      "changes": "Found 3 bugs: (1) yfinance end param is exclusive — was excluding today's data. IONQ showed $40.88 (yesterday) instead of $36.73. (2) Wrong direction: +21.7% (yesterday) vs actual -9.4% today. (3) Duplicate alerts saved every cycle. Fixes: Added +1 day to end_date in volume_scanner.py + technical_scanner.py, added 2-hour dedup check to save_alert(). Engine restarted, Cycle 1 running, ETA ~21:15 GMT+4."
+    },
+    {
+      "title": "🔌 IBKR API Integration — CONNECTED ✅",
+      "status": "READY_FOR_PHASE2",
+      "date": "Feb 27, 19:51–20:45 GMT+4",
+      "changes": "IBKR Paper Trading logged in successfully. Netsh portproxy configured: 4003 → localhost:4002. Windows firewall rule added. ib_insync installed in venv, test connection successful. Connection path: WSL (172.19.190.143) → Windows Wi-Fi IP (192.168.50.44:4003) → netsh relay → localhost:4002. Issue: Paper account has no market data subscriptions (live session competing). Options: (1) Close IBKR on mobile, (2) Add $10/mo extra data line, (3) Use for scanners only. Ready for next phase once market data decision made."
     }
   ]
 }
