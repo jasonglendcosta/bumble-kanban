@@ -1,0 +1,114 @@
+{
+  "session_id": "heartbeat-246pm-feb24",
+  "timestamp": "2026-02-24T14:46:00Z",
+  "milestones": [
+    {
+      "title": "✅ Mission Control Dashboard Live",
+      "status": "LIVE",
+      "equity": "localhost:3000",
+      "changes": "6 features deployed, gateway auth issue blocking real data"
+    },
+    {
+      "title": "❌ GOD TRADER REMOVED (Feb 24)",
+      "status": "ARCHIVED",
+      "equity": "N/A",
+      "changes": "Jason decommissioned. Freqtrade removed (1.7GB). GOD TRADER v2.0 paused. Files in ~/clawd/repos/_trash/freqtrade_removed_20260224 (recoverable). Portfolio focus shifted."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "god-trader-monitor",
+      "title": "❌ GOD TRADER v3.0: DECOMMISSIONED",
+      "status": "archived",
+      "priority": "low",
+      "note": "Removed Feb 24, 9:51 AM per Jason's order. Bot paused, Freqtrade trashed. Trading portfolio reassessment pending."
+    },
+    {
+      "id": "mission-control-gateway",
+      "title": "Fix Mission Control gateway connectivity (expose 0.0.0.0:18789)",
+      "status": "ready",
+      "priority": "high",
+      "note": "All 6 pages live, but features return empty data until gateway auth works"
+    },
+    {
+      "id": "intune-task-deploy",
+      "title": "Intune Stealth Cleaner: Deploy scheduled task (needs admin PS)",
+      "status": "blocked",
+      "priority": "medium",
+      "note": "Jason must run 1 admin PowerShell command to complete"
+    },
+    {
+      "id": "apex-deploy",
+      "title": "APEX Platform deployment decision",
+      "status": "ready",
+      "priority": "medium",
+      "note": "Build complete, awaiting Jason decision to deploy to Vercel"
+    },
+    {
+      "id": "ai-model-scan",
+      "title": "AI Model Release Intelligence Brief",
+      "status": "complete",
+      "priority": "low",
+      "note": "✅ Delivered: Gemini 3.1 Pro is vaporware (404 on CLI), other releases confirmed"
+    }
+  ],
+  "last_heartbeat": "2026-02-24T17:39:00Z",
+  "recent_sessions": [
+    {
+      "id": "gemini-oauth-breakthrough-feb24",
+      "title": "Gemini OAuth Configuration Breakthrough — Web Search Agent Live",
+      "timestamp": "2026-02-24T17:39:00Z",
+      "findings": "Created dedicated gemini-search agent with google-antigravity/gemini-3-pro-preview. modelApplied: true ✅. Web search now operational with Gemini OAuth. Architecture: main agent spawns gemini-search via allowAgents config. Next: integrate Firecrawl for scraping (web_fetch hits 403 on retail sites). Status: PRODUCTION READY",
+      "blockers": []
+    },
+    {
+      "id": "windows-ram-diagnostics-feb24",
+      "title": "Windows RAM Diagnostics — System Optimization",
+      "timestamp": "2026-02-24T17:39:00Z",
+      "findings": "Binance (888MB, 3 instances), Chrome (799MB), explorer.exe (467MB leak), ChatGPT (370MB, 2 instances). Quick wins: kill Binance duplicates (580MB), restart explorer (467MB leak fix), kill ChatGPT duplicate (170MB). WSL is clean (1.2GB/7.8GB). Recommendation: Restart explorer.exe immediately.",
+      "blockers": []
+    },
+    {
+      "id": "top-10-intelligence-rankings-feb24",
+      "title": "Top 10 AI Model Intelligence Rankings (Artificial Analysis, 114 models)",
+      "timestamp": "2026-02-24T15:28:00Z",
+      "findings": "#1 Gemini 3.1 Pro (57), #2 Claude Opus 4.6 max (53), #3 Claude Sonnet 4.6 max (51), #4 GPT-5.2 xhigh (51), #5 Claude Opus 4.5 (50), #6 Kimi K2.5 (47, cheapest top-10 at $0.60/$3.00), #7 GPT-5.2 Codex (49), #8 Gemini 3 Pro Preview (48, 137t/s), #9 GPT-5.1 (48, $1.25), #10 Claude 4.5 Haiku (47). Full benchmark table with specs, context, pricing.",
+      "blockers": []
+    },
+    {
+      "id": "mac-dubai-pricing-feb24",
+      "title": "Mac Mini & Mac Studio Pricing in Dubai (AED)",
+      "timestamp": "2026-02-24T15:35:00Z",
+      "findings": "Mac Mini M4 16GB/256GB: AED 2,499. M4 24GB/512GB: AED 4,179. M4 Pro 24GB/512GB: AED 5,859. Mac Studio M4 Max ~AED 8,499+. Best discounts: Ramadan Rewards + trade-in (up to AED 4,000). Apple UAE has fixed authorised pricing (no variance). iStyle + Sharaf DG confirmed sources.",
+      "blockers": []
+    },
+    {
+      "id": "kimi-vs-qwen-vs-glm-comparison",
+      "title": "Frontier Model Comparison: Kimi K2.5 vs Qwen 3.5 vs GLM-5",
+      "timestamp": "2026-02-24T15:10:00Z",
+      "findings": "K2.5 (1T, 32B active, Agent Swarm) vs Qwen 3.5 (397B, 17B active, Gated DeltaNet, 1M ctx, 201 langs) vs GLM-5 (32B dense, coding SOTA, Feb 18 new, SOTA on SWE-bench Verified). K2.5 best multi-agent (BrowseComp 78.4 swarm), Qwen best efficiency+multilingual, GLM-5 best coding + only self-hostable option",
+      "blockers": []
+    },
+    {
+      "id": "ollama-local-models-feb24",
+      "title": "Ollama Deep Dive: What Is It, Skills Using It, Best Models for RTX 4070",
+      "timestamp": "2026-02-24T15:00:00Z",
+      "findings": "Ollama = local model runner (zero API cost, privacy, offline). Skills: tmux-agents (free coding agents), relay-to-agent (universal API), qmd (embeddings), llm (multi-provider). Best 8GB models: DeepSeek-R1:7B (reasoning), GLM-4.7-Flash (coding), Gemma3:4B (general), Phi-4:14B (quality), Qwen2.5:7B (baseline). Use cases: RAG, private doc processing, automation pipelines",
+      "blockers": []
+    },
+    {
+      "id": "frontier-ai-models-feb24",
+      "title": "This Week's AI Model Releases (Feb 18-24)",
+      "timestamp": "2026-02-24T14:32:00Z",
+      "findings": "Gemini 3.1 Pro (Feb 19, 2X+ reasoning), Claude Sonnet 4.6 (Feb 17, Opus-level free), Qwen 3.5-397B-A17B (Feb 18, MoE, beats GPT-5.2), GLM-5 (Feb 18, new from Zhipu), DeepSeek distillation IP theft",
+      "blockers": ["Reddit Gemini timeout", "X/Twitter unavailable"]
+    },
+    {
+      "id": "last30days-research-feb23",
+      "title": "Last30Days OpenClaw Skills Research",
+      "timestamp": "2026-02-23T15:51:00Z",
+      "findings": "YouTube: 20 videos, 1M+ views. Top skills: Perplexity/Web, last30days, Codex, ComfyUI, Agent Teams, Memory Architecture, Ollama",
+      "blockers": ["Gemini 3 Pro capacity (429 errors)", "Brave API key missing", "Reddit timeout"]
+    }
+  ]
+}
