@@ -31,6 +31,12 @@
       "status": "ACTIVE",
       "date": "Daily 07:30 GMT+4",
       "changes": "Scheduled reminder successfully executed. Sends weather, news, crypto, action items to Jason's Telegram (8292946837). Last run Feb 26, today Mar 1 ✅"
+    },
+    {
+      "title": "🔌 Jason's Crypto Signals — WebSocket Real-Time Layer",
+      "status": "LIVE",
+      "date": "Mar 1, 20:26 GMT+4",
+      "changes": "Deployed Binance WebSocket (7th scanner). Real-time volume surge + price velocity detection. Sub-second signal generation. Instant Telegram alerts (score ≥65 bypass 60s fusion wait). Calibration complete, 289 tokens tracked. Engine live, connected, ready for Cycle 4+ detections."
     }
   ]
 }
