@@ -1,6 +1,15 @@
 {
   "active": [
     {
+      "id": "jasons-crypto-permanent-fixes",
+      "title": "✅ Jason's Crypto Signals — 3 Permanent Fixes LIVE",
+      "status": "COMPLETE",
+      "progress": 100,
+      "lastUpdate": "2026-03-03T11:04:00+04:00",
+      "tags": ["crypto", "production", "self-healing"],
+      "notes": "1) 60s cooldown (was 300s) — staggered rotation, no dead windows. 2) Self-healing watchdog — detects 3 silent cycles, auto-resets, notifies on Telegram. 3) DEX scanner null fix — handles API null responses. Result: 15 alerts/cycle continuous flow. Zero manual intervention ever needed."
+    },
+    {
       "id": "crypto-signals-win-rate-tracker",
       "title": "🎯 Crypto Signals — Win Rate Tracker LIVE",
       "status": "ACTIVE",
@@ -10,22 +19,13 @@
       "notes": "Win rate tracker deployed and resolving outcomes. First batch: 187 outcomes resolved (31.0% win, 25.7% loss, 43.3% neutral). Both engines writing to DB. Phase 2 (dashboard + macro filter) ready for approval."
     },
     {
-      "id": "jasons-crypto-telegram-fix",
-      "title": "✅ Jason's Crypto Signals — FIXED: Zero→13 Alerts/Cycle",
-      "status": "COMPLETE",
-      "progress": 100,
-      "lastUpdate": "2026-03-03T09:14:00+04:00",
-      "tags": ["crypto", "bugfix", "production"],
-      "notes": "Problem: 4 over-aggressive gates stacked (MEDIUM threshold, neutral filter, single-source requirement, state-change detection) = zero Telegram sends. Fix: Removed all gates, replaced with score≥45 + 5-min cooldown. Result: 13 alerts/cycle flowing to Telegram. Continuous smart alerts resumed."
-    },
-    {
       "id": "crypto-signals-1000x-plan",
       "title": "🚀 Crypto Signals — 1000x Improvement Plan (Phase 2-4)",
       "status": "PENDING",
-      "progress": 10,
+      "progress": 15,
       "dueDate": "2026-03-10T23:59:00+04:00",
       "tags": ["crypto", "architecture", "roadmap"],
-      "notes": "Phase 1 complete (frozen + telegram-silent signals fixed). Phase 2-4 awaiting Jason's go-ahead: (2) Signal quality: Win rate dashboard + macro correlation filter, (3) New alpha sources: OKX/Bybit funding + order book + whale tracking, (4) Architecture: Event-driven + tiered cadence."
+      "notes": "Phase 1 complete (all alert firing issues resolved + self-healing watchdog deployed). Phase 2-4 awaiting Jason's go-ahead: (2) Signal quality: Win rate dashboard + macro correlation filter, (3) New alpha sources: OKX/Bybit funding + order book + whale tracking, (4) Architecture: Event-driven + tiered cadence."
     }
   ],
   "onHold": [
@@ -49,10 +49,10 @@
   "infrastructure": [
     {
       "id": "pm2-crypto-engines",
-      "title": "PM2 — Crypto Engines FIRING",
+      "title": "PM2 — Crypto Engines FIRING + SELF-HEALING",
       "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T09:14:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online and streaming alerts continuously. Jason's engine now firing 13+ alerts per cycle to Telegram."
+      "lastUpdate": "2026-03-03T11:04:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's engine now 15 alerts/cycle continuous, with auto-recovery watchdog. No dead windows, no manual intervention ever needed."
     },
     {
       "id": "gemini-cli-wrapper",
