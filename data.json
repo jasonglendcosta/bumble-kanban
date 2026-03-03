@@ -1,60 +1,74 @@
 {
-  "session_id": "work-session-mar02-morning",
-  "timestamp": "2026-03-02T09:01:00Z",
-  "milestones": [
+  "active": [
     {
-      "title": "✅ Pre-Market Stock Scan (6:00 AM GMT+4)",
-      "status": "COMPLETE",
-      "date": "Mar 2, 6:00 AM GMT+4",
-      "changes": "QBTS #1 (7/10 conviction, entry $16.50-17.50, target $28-32), IONQ #2 (6/10, entry $35-36, target $55-65), RGTI #3 (4/10, entry $15-16, target $28-32). Delivered to Telegram. Market closed due to regional security incident."
-    },
-    {
-      "title": "✅ Morning Brief (7:30 AM GMT+4)",
-      "status": "COMPLETE",
-      "date": "Mar 2, 7:30 AM GMT+4",
-      "changes": "Regional security crisis update (Iranian strikes, flights suspended, markets closed 3/2-3/4). Fear & Greed 10-15. BTC -2.2%, ETH -3.9%. Optimal for deep focus work. Delivered to Telegram (msg #9295)."
-    },
-    {
-      "title": "⚠️ Universal Model Monitor Error (8:00 AM GMT+4)",
-      "status": "ALERT_SENT",
-      "date": "Mar 2, 8:00 AM GMT+4",
-      "changes": "OpenAI web scraper failed in cron job. Gemini + Anthropic scans OK. Alert sent to Jason (msg #9296). Awaiting debug directive."
-    },
-    {
-      "title": "⏸️ APEX Platform",
-      "status": "ON_HOLD",
-      "date": "Feb 18 onwards",
-      "changes": "Build 100% complete, deployment paused indefinitely per Jason's decision. All components wired, Strategy Theme applied, zero TS errors. Awaiting go-ahead to deploy to Vercel."
-    },
-    {
-      "title": "⚔️ GOD TRADER",
-      "status": "ON_HOLD",
-      "date": "Feb 27, 09:17 GMT+4",
-      "changes": "PM2 process stopped and saved. Code preserved at ~/clawd/repos/god-trader/. Dashboard static (no live data). To resume: pm2 start god-trader && pm2 save"
-    },
-    {
-      "title": "🔱 GOD SIGNAL (Crypto & Stocks)",
-      "status": "LIVE",
-      "date": "Feb 28",
-      "changes": "Crypto: Direction logic deadlock fixed (MACD removed, funding threshold tightened, cooldown reduced 1800→900s). Stocks: Phase 1 complete, 125x faster (23min→6sec), TradingView + futures data, no API cost. Both engines scanning continuously."
-    },
-    {
-      "title": "📊 Morning Brief Cron",
+      "id": "crypto-signals-win-rate-tracker",
+      "title": "🎯 Crypto Signals — Win Rate Tracker LIVE",
       "status": "ACTIVE",
-      "date": "Daily 07:30 GMT+4",
-      "changes": "Scheduled reminder successfully executed. Sends weather, news, crypto, action items to Jason's Telegram (8292946837). Last run Feb 26, today Mar 1 ✅"
+      "progress": 100,
+      "lastUpdate": "2026-03-03T08:54:00+04:00",
+      "tags": ["crypto", "metrics", "production"],
+      "notes": "Win rate tracker deployed and resolving outcomes. First batch: 187 outcomes resolved (31.0% win, 25.7% loss, 43.3% neutral). Both engines writing to DB. Phase 2 (dashboard + macro filter) ready for approval."
     },
     {
-      "title": "🔧 Jason's Crypto Signals — FULL OG V0.000001 RESTORATION",
-      "status": "LIVE",
-      "date": "Mar 2, 16:37–16:42 GMT+4",
-      "changes": "COMPLETE OG restoration (Feb 27 original). WhaleScanner top 50 by 24h volume. Threshold 75 (HIGH only). Cooldown 300s (5 min). Prices CoinGecko only (removed Binance live override). No direction filter. 6 scanners: Whale, DEX, Social, SmartMoney, Prediction, Price. Result: Pure OG behavior, 2 alerts per cycle on genuine HIGH conviction. All complexity stripped."
+      "id": "crypto-signals-frozen-fix",
+      "title": "🔱 Jason's Crypto Signals — Frozen Signals FIXED",
+      "status": "COMPLETE",
+      "progress": 100,
+      "lastUpdate": "2026-03-03T08:26:00+04:00",
+      "tags": ["crypto", "bugfix", "production"],
+      "notes": "Replaced dumb cooldown/dedup with state-change detection model. Fire only when: score changes ±5pts, direction flips, new token, or 30-min refresh. Continuous smart alerts flowing to Telegram (8450680760)."
     },
     {
-      "title": "🌐 Webchat UI Clean Chat Patch",
-      "status": "PERMANENT",
-      "date": "Mar 1, 19:36 GMT+4",
-      "changes": "CSS patch to hide tool card output clog + auto-reapply cron (every 6h). Survives npm updates. Idempotent. Live and working."
+      "id": "morning-brief-cron-missing",
+      "title": "⚠️ MISSING: MORNING BRIEF Cron (07:30 GMT+4)",
+      "status": "TODO",
+      "progress": 0,
+      "dueDate": "2026-03-03T07:30:00+04:00",
+      "tags": ["cron", "automation", "telegram"],
+      "notes": "Cron job missing from crontab. Need to recreate for daily 07:30 AM weather + news + crypto + action items brief. Known issue: Gemini API 429 at peak hours — need Brave/Tavily fallback."
+    },
+    {
+      "id": "crypto-signals-1000x-plan",
+      "title": "🚀 Crypto Signals — 1000x Improvement Plan (Phase 2-4)",
+      "status": "PENDING",
+      "progress": 10,
+      "dueDate": "2026-03-10T23:59:00+04:00",
+      "tags": ["crypto", "architecture", "roadmap"],
+      "notes": "Phase 1 complete (frozen signals fixed). Phase 2-4 awaiting Jason's go-ahead: (2) Signal quality: Win rate dashboard + macro correlation filter, (3) New alpha sources: OKX/Bybit funding + order book + whale tracking, (4) Architecture: Event-driven + tiered cadence."
+    }
+  ],
+  "onHold": [
+    {
+      "id": "apex-platform",
+      "title": "APEX Platform",
+      "status": "HOLD",
+      "progress": 100,
+      "lastUpdate": "2026-02-16",
+      "notes": "Build 100% complete, deployment paused indefinitely per Jason"
+    },
+    {
+      "id": "god-trader",
+      "title": "GOD TRADER",
+      "status": "HOLD",
+      "progress": 90,
+      "lastUpdate": "2026-02-27",
+      "notes": "PM2 process stopped and saved (config preserved), code at ~/clawd/repos/god-trader/"
+    }
+  ],
+  "infrastructure": [
+    {
+      "id": "gemini-cli-wrapper",
+      "title": "Gemini CLI — v0.31.0 + NODE_OPTIONS Wrapper",
+      "status": "ACTIVE",
+      "lastUpdate": "2026-03-03T09:07:00+04:00",
+      "notes": "Updated from v0.30.0 → 0.31.0. Wrapper fixed (regular file, not symlink). Post-update procedure documented in TOOLS.md."
+    },
+    {
+      "id": "pm2-crypto-engines",
+      "title": "PM2 — Crypto Engines Online",
+      "status": "ACTIVE",
+      "lastUpdate": "2026-03-03T09:00:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online and streaming alerts. Memory usage: ~339MB (stocks paused per Jason Mar 3 08:19)."
     }
   ]
 }
