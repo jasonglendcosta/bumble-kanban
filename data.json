@@ -2,12 +2,12 @@
   "active": [
     {
       "id": "tradingview-research-complete",
-      "title": "✅ TradingView Research — 2-Part Deep Dive DELIVERED",
+      "title": "✅ TradingView Research — COMPLETE + GEMINI VALIDATED",
       "status": "COMPLETE",
       "progress": 100,
-      "lastUpdate": "2026-03-03T21:39:00+04:00",
+      "lastUpdate": "2026-03-03T22:39:00+04:00",
       "tags": ["research", "crypto-signals", "tradingview", "strategy"],
-      "notes": "Comprehensive research on TradingView subscriptions + pricing by region + promo codes. Recommendation: Premium ($56.49/mo) for webhooks, 800 alerts, deep backtesting, chart patterns. Best deal NOW: Turkey VPN + TRADE15 = $250-300/yr. Best deal EVER: Black Friday + VPN = $80-150/yr. Reports sent to Telegram."
+      "notes": "2-part research (web scrape + Gemini CLI) complete. Key findings: Easter sale (Apr) = 70% off Premium (~$180/yr), Cancel Renewal trick = 50% off, Subscription stacking = 13 month extensions. Recommendation: Buy at Easter sale, stack at Black Friday = $14/month effective. 4 Telegram reports sent."
     },
     {
       "id": "crypto-signals-win-rate-tracker",
@@ -25,7 +25,7 @@
       "progress": 15,
       "dueDate": "2026-03-10T23:59:00+04:00",
       "tags": ["crypto", "roadmap", "architecture"],
-      "notes": "Phase 1 complete. Awaiting: Phase 2 (win rate dashboard), Phase 3 (OKX/Bybit funding), Phase 4 (event-driven). TradingView Premium upgrade (webhooks + backtesting) would accelerate all phases."
+      "notes": "Phase 1 complete. TradingView Premium upgrade (webhooks + backtesting) would accelerate all phases. Best pricing: Wait for Easter sale (April) at 70% off."
     }
   ],
   "onHold": [
