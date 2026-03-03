@@ -1,22 +1,31 @@
 {
   "active": [
     {
+      "id": "jasons-crypto-telegram-permanent-fix",
+      "title": "✅ Jason's Crypto Signals — Permanent Fix: Zero Telegram → 18/Cycle",
+      "status": "COMPLETE",
+      "progress": 100,
+      "lastUpdate": "2026-03-03T12:15:00+04:00",
+      "tags": ["crypto", "production", "critical-fix"],
+      "notes": "Problem: 5-min cooldown created 4-5 min dead windows every cycle (Jason noticed at 10:59). Solution: 120s cooldown + self-healing watchdog + DEX null fix. Result: 18 alerts per cycle, continuous rotation, auto-recovery on silence. Thresholds: Jason's ≥45, GOD Signal ≥60."
+    },
+    {
       "id": "crypto-signals-win-rate-tracker",
       "title": "🎯 Crypto Signals — Win Rate Tracker LIVE",
       "status": "ACTIVE",
       "progress": 100,
       "lastUpdate": "2026-03-03T08:54:00+04:00",
       "tags": ["crypto", "metrics", "production"],
-      "notes": "Win rate tracker deployed and resolving outcomes. First batch: 187 outcomes resolved (31.0% win, 25.7% loss, 43.3% neutral). Both engines writing to DB."
+      "notes": "Win rate tracker deployed. First batch: 187 outcomes resolved (31.0% win, 25.7% loss, 43.3% neutral). Both engines writing to DB. Phase 2 (dashboard) ready for approval."
     },
     {
-      "id": "jasons-crypto-permanent-fix",
-      "title": "✅ Jason's Crypto Signals — PERMANENTLY FIXED (Hardened)",
-      "status": "COMPLETE",
-      "progress": 100,
-      "lastUpdate": "2026-03-03T11:15:00+04:00",
-      "tags": ["crypto", "bugfix", "production", "hardened"],
-      "notes": "Fixed zero-Telegram-send issue: cooldown 5min→2min, self-healing watchdog (3 silent cycles→auto-reset), DEX scanner null fix, whale-only signals enabled. Now 18 alerts/cycle, continuous flow, zero dead windows. Can't happen again."
+      "id": "crypto-signals-1000x-plan",
+      "title": "🚀 Crypto Signals — 1000x Improvement Plan (Phase 2-4)",
+      "status": "PENDING",
+      "progress": 15,
+      "dueDate": "2026-03-10T23:59:00+04:00",
+      "tags": ["crypto", "architecture", "roadmap"],
+      "notes": "Phase 1 complete (all critical issues fixed + permanent safeguards). Phase 2-4 awaiting Jason's approval: (2) Win rate dashboard + macro filter, (3) OKX/Bybit funding + whale tracking, (4) Event-driven architecture."
     }
   ],
   "onHold": [
@@ -34,23 +43,23 @@
       "status": "HOLD",
       "progress": 90,
       "lastUpdate": "2026-02-27",
-      "notes": "PM2 process stopped and saved (config preserved), code at ~/clawd/repos/god-trader/"
+      "notes": "PM2 process stopped and saved, code at ~/clawd/repos/god-trader/"
     }
   ],
   "infrastructure": [
     {
       "id": "pm2-crypto-engines",
-      "title": "PM2 — Crypto Engines FIRING",
+      "title": "PM2 — Crypto Engines FIRING CONTINUOUSLY",
       "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T11:15:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's engine: 18 alerts/cycle, 120s cooldown, whale-only enabled, self-healing watchdog active."
+      "lastUpdate": "2026-03-03T12:15:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) online. Jason's engine: 18 alerts/cycle, 2-min cooldown, self-healing watchdog, whale-only signals flowing. Thresholds: ≥45 (Jason) vs ≥60 (GOD Signal)."
     },
     {
       "id": "gemini-cli-wrapper",
       "title": "Gemini CLI — v0.31.0 + NODE_OPTIONS Wrapper",
       "status": "ACTIVE",
       "lastUpdate": "2026-03-03T09:07:00+04:00",
-      "notes": "Updated from v0.30.0 → 0.31.0. Wrapper fixed (regular file, not symlink). Post-update procedure in TOOLS.md."
+      "notes": "Updated v0.30.0 → 0.31.0. Post-update procedure documented in TOOLS.md."
     }
   ]
 }
