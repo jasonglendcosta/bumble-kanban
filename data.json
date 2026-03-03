@@ -1,13 +1,13 @@
 {
   "active": [
     {
-      "id": "jasons-crypto-permanent-fix",
-      "title": "✅ Jason's Crypto Signals — FINAL FIX + THRESHOLD TUNED",
+      "id": "jasons-crypto-config-tuned",
+      "title": "✅ Jason's Crypto Signals — Config Optimized",
       "status": "COMPLETE",
       "progress": 100,
-      "lastUpdate": "2026-03-03T15:05:00+04:00",
+      "lastUpdate": "2026-03-03T18:50:00+04:00",
       "tags": ["crypto", "production", "solved"],
-      "notes": "Issue: 4-5 min dead windows + noisy alerts. Fix: (1) Cooldown 120s, (2) Self-healing watchdog, (3) DEX null fix. TUNED: Threshold 45→55. Result: 7 alerts/cycle (quality only), zero dead windows, auto-heals. Thresholds: Jason 55 (MEDIUM+), GOD 60 (MEDIUM+)"
+      "notes": "Threshold 45→55, data source restored to top 50 by volume. Result: 41 Binance matches, 4 quality alerts/cycle (SOL, KITE, NEAR, XPL). Eliminated noise tokens. 120s cooldown, self-healing watchdog armed."
     },
     {
       "id": "crypto-signals-win-rate-tracker",
@@ -16,7 +16,7 @@
       "progress": 100,
       "lastUpdate": "2026-03-03T08:54:00+04:00",
       "tags": ["crypto", "metrics", "production"],
-      "notes": "Win rate tracking deployed, resolving outcomes continuously. First batch: 187 outcomes (31% win, 25.7% loss, 43.3% neutral). Phase 2 (dashboard + macro filter) awaiting approval."
+      "notes": "Win rate tracking deployed, resolving outcomes continuously. ~31% accuracy baseline. Phase 2 (dashboard) awaiting approval."
     },
     {
       "id": "crypto-signals-1000x-plan",
@@ -25,7 +25,7 @@
       "progress": 15,
       "dueDate": "2026-03-10T23:59:00+04:00",
       "tags": ["crypto", "roadmap", "architecture"],
-      "notes": "Phase 1 complete (all critical issues fixed, threshold tuned). Phase 2-4 awaiting Jason: (2) Win rate dashboard + macro filter, (3) OKX/Bybit funding + whale tracking, (4) Event-driven architecture + tiered cadence"
+      "notes": "Phase 1 complete. Awaiting: Phase 2 (win rate dashboard), Phase 3 (OKX/Bybit funding), Phase 4 (event-driven)"
     }
   ],
   "onHold": [
@@ -34,32 +34,29 @@
       "title": "APEX Platform",
       "status": "HOLD",
       "progress": 100,
-      "lastUpdate": "2026-02-16",
-      "notes": "Build 100% complete, deployment paused indefinitely per Jason"
+      "lastUpdate": "2026-02-16"
     },
     {
       "id": "god-trader",
       "title": "GOD TRADER",
       "status": "HOLD",
       "progress": 90,
-      "lastUpdate": "2026-02-27",
-      "notes": "PM2 process stopped, code preserved at ~/clawd/repos/god-trader/"
+      "lastUpdate": "2026-02-27"
     }
   ],
   "infrastructure": [
     {
       "id": "pm2-crypto-engines",
-      "title": "PM2 — Crypto Engines FIRING QUALITY SIGNALS",
+      "title": "PM2 — Crypto Engines FIRING (Top 50 by Volume)",
       "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T15:05:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's: 7 alerts/cycle (threshold 55), 120s cooldown, watchdog armed. GOD: 4-7 alerts/cycle (threshold 60). Win rate: 31% accuracy, auto-tracking."
+      "lastUpdate": "2026-03-03T18:50:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's: 4 alerts/cycle, 120s cooldown, 55+ threshold, top 50 by volume. Watchdog armed."
     },
     {
       "id": "gemini-cli-wrapper",
       "title": "Gemini CLI — v0.31.0 + NODE_OPTIONS Wrapper",
       "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T09:07:00+04:00",
-      "notes": "Updated from v0.30.0 → 0.31.0. Wrapper fixed (regular file, not symlink). Post-update procedure documented in TOOLS.md."
+      "lastUpdate": "2026-03-03T09:07:00+04:00"
     }
   ]
 }
