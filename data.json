@@ -1,31 +1,31 @@
 {
   "active": [
     {
+      "id": "jasons-crypto-permanent-fix",
+      "title": "✅ Jason's Crypto Signals — FINAL FIX DEPLOYED",
+      "status": "COMPLETE",
+      "progress": 100,
+      "lastUpdate": "2026-03-03T11:14:00+04:00",
+      "tags": ["crypto", "production", "solved"],
+      "notes": "Issue: 4-5 min dead windows between alert bursts (5-min cooldown synchronized). Fix: (1) Cooldown 60s→120s, (2) Self-healing watchdog (3 silent cycles=reset), (3) DEX null fix. Result: 18 alerts/cycle, zero dead windows, auto-heals on failure. Whale signals flowing. Thresholds: Jason 45+, GOD Signal 60+"
+    },
+    {
       "id": "crypto-signals-win-rate-tracker",
       "title": "🎯 Crypto Signals — Win Rate Tracker LIVE",
       "status": "ACTIVE",
       "progress": 100,
       "lastUpdate": "2026-03-03T08:54:00+04:00",
       "tags": ["crypto", "metrics", "production"],
-      "notes": "Win rate tracker deployed and resolving outcomes. First batch: 187 outcomes resolved (31.0% win, 25.7% loss, 43.3% neutral). Both engines writing to DB. Phase 2 (dashboard + macro filter) ready for approval."
-    },
-    {
-      "id": "jasons-crypto-production-hardening",
-      "title": "✅ Jason's Crypto Signals — HARDENED: Watchdog + Cooldown 120s + Fixes",
-      "status": "COMPLETE",
-      "progress": 100,
-      "lastUpdate": "2026-03-03T14:00:00+04:00",
-      "tags": ["crypto", "production", "reliability"],
-      "notes": "3 permanent fixes: (1) Cooldown optimized 300s→120s (2-min, smooth rotation, no dead windows), (2) Self-healing watchdog (3 silent cycles → auto-reset cooldowns + notify), (3) DEX scanner NoneType crash fixed. Whale-only signals confirmed flowing. 18+ alerts/cycle. Engine now fail-safe."
+      "notes": "Win rate tracking deployed, resolving outcomes continuously. First batch: 187 outcomes (31% win, 25.7% loss, 43.3% neutral). Phase 2 (dashboard + macro filter) awaiting approval."
     },
     {
       "id": "crypto-signals-1000x-plan",
-      "title": "🚀 Crypto Signals — 1000x Improvement Plan (Phase 2-4)",
+      "title": "🚀 Crypto Signals — 1000x Improvement (Phase 2-4)",
       "status": "PENDING",
-      "progress": 10,
+      "progress": 15,
       "dueDate": "2026-03-10T23:59:00+04:00",
-      "tags": ["crypto", "architecture", "roadmap"],
-      "notes": "Phase 1 complete (frozen + telegram-silent signals fixed, hardened with watchdog). Phase 2-4 awaiting Jason's go-ahead: (2) Signal quality: Win rate dashboard + macro correlation filter, (3) New alpha sources: OKX/Bybit funding + order book + whale tracking, (4) Architecture: Event-driven + tiered cadence."
+      "tags": ["crypto", "roadmap", "architecture"],
+      "notes": "Phase 1 complete (all critical issues fixed). Phase 2-4 awaiting Jason: (2) Win rate dashboard + macro filter, (3) OKX/Bybit funding + whale tracking, (4) Event-driven architecture + tiered cadence"
     }
   ],
   "onHold": [
@@ -43,16 +43,16 @@
       "status": "HOLD",
       "progress": 90,
       "lastUpdate": "2026-02-27",
-      "notes": "PM2 process stopped and saved (config preserved), code at ~/clawd/repos/god-trader/"
+      "notes": "PM2 process stopped, code preserved at ~/clawd/repos/god-trader/"
     }
   ],
   "infrastructure": [
     {
       "id": "pm2-crypto-engines",
-      "title": "PM2 — Crypto Engines FIRING",
+      "title": "PM2 — Crypto Engines FIRING CONTINUOUSLY",
       "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T14:00:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online, streaming alerts. Watchdog active. Jason's engine: 18+ alerts/cycle @ 120s cooldown. GOD Signal: 3-7 alerts/cycle @ 60s threshold."
+      "lastUpdate": "2026-03-03T11:14:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's: 18 alerts/cycle, 120s cooldown, self-healing watchdog. GOD: 4-7 alerts/cycle. Win rate tracking active."
     },
     {
       "id": "gemini-cli-wrapper",
