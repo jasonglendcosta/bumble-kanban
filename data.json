@@ -1,22 +1,22 @@
 {
   "active": [
     {
-      "id": "crypto-signals-hardening",
-      "title": "✅ Jason's Crypto Signals — Production Hardening COMPLETE",
-      "status": "COMPLETE",
-      "progress": 100,
-      "lastUpdate": "2026-03-03T11:13:00+04:00",
-      "tags": ["crypto", "production", "safeguards"],
-      "notes": "3-layer hardening deployed: (1) Self-healing watchdog (3 silent cycles → auto-reset), (2) DEX scanner null-safe fix, (3) Simplified gates (score≥45 only). Result: 18 alerts/cycle, 120s cooldown per token, whale-only signals flowing freely. Production-ready."
-    },
-    {
       "id": "crypto-signals-win-rate-tracker",
       "title": "🎯 Crypto Signals — Win Rate Tracker LIVE",
       "status": "ACTIVE",
       "progress": 100,
       "lastUpdate": "2026-03-03T08:54:00+04:00",
       "tags": ["crypto", "metrics", "production"],
-      "notes": "Win rate tracker deployed and resolving outcomes. 187 outcomes resolved (31.0% win, 25.7% loss, 43.3% neutral). Both engines writing to DB. Phase 2 (dashboard + macro filter) ready for approval."
+      "notes": "Win rate tracker deployed and resolving outcomes. First batch: 187 outcomes resolved (31.0% win, 25.7% loss, 43.3% neutral). Both engines writing to DB. Phase 2 (dashboard + macro filter) ready for approval."
+    },
+    {
+      "id": "jasons-crypto-production-hardening",
+      "title": "✅ Jason's Crypto Signals — HARDENED: Watchdog + Cooldown 120s + Fixes",
+      "status": "COMPLETE",
+      "progress": 100,
+      "lastUpdate": "2026-03-03T14:00:00+04:00",
+      "tags": ["crypto", "production", "reliability"],
+      "notes": "3 permanent fixes: (1) Cooldown optimized 300s→120s (2-min, smooth rotation, no dead windows), (2) Self-healing watchdog (3 silent cycles → auto-reset cooldowns + notify), (3) DEX scanner NoneType crash fixed. Whale-only signals confirmed flowing. 18+ alerts/cycle. Engine now fail-safe."
     },
     {
       "id": "crypto-signals-1000x-plan",
@@ -25,18 +25,10 @@
       "progress": 10,
       "dueDate": "2026-03-10T23:59:00+04:00",
       "tags": ["crypto", "architecture", "roadmap"],
-      "notes": "Phase 1 complete (frozen + telegram-silent signals fixed, hardening deployed). Phase 2-4 awaiting Jason's go-ahead: (2) Win rate dashboard, (3) New alpha sources, (4) Event-driven architecture."
+      "notes": "Phase 1 complete (frozen + telegram-silent signals fixed, hardened with watchdog). Phase 2-4 awaiting Jason's go-ahead: (2) Signal quality: Win rate dashboard + macro correlation filter, (3) New alpha sources: OKX/Bybit funding + order book + whale tracking, (4) Architecture: Event-driven + tiered cadence."
     }
   ],
   "onHold": [
-    {
-      "id": "morning-brief-cron",
-      "title": "⚠️ Missing: MORNING BRIEF Cron (07:30 GMT+4)",
-      "status": "TODO",
-      "progress": 0,
-      "tags": ["cron", "automation", "telegram"],
-      "notes": "Need to recreate for daily weather + news + crypto + action items. Known blocker: Gemini API 429 at peak hours. Solution: Implement Brave/Tavily fallback."
-    },
     {
       "id": "apex-platform",
       "title": "APEX Platform",
@@ -57,17 +49,17 @@
   "infrastructure": [
     {
       "id": "pm2-crypto-engines",
-      "title": "PM2 — Crypto Engines FIRING + HARDENED",
+      "title": "PM2 — Crypto Engines FIRING",
       "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T13:15:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's engine: 18 alerts/cycle, 120s cooldown, whale-only enabled, watchdog active. No dead windows."
+      "lastUpdate": "2026-03-03T14:00:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online, streaming alerts. Watchdog active. Jason's engine: 18+ alerts/cycle @ 120s cooldown. GOD Signal: 3-7 alerts/cycle @ 60s threshold."
     },
     {
       "id": "gemini-cli-wrapper",
       "title": "Gemini CLI — v0.31.0 + NODE_OPTIONS Wrapper",
       "status": "ACTIVE",
       "lastUpdate": "2026-03-03T09:07:00+04:00",
-      "notes": "Updated from v0.30.0 → 0.31.0. Wrapper rebuilt (regular file, not symlink). Post-update procedure in TOOLS.md."
+      "notes": "Updated from v0.30.0 → 0.31.0. Wrapper fixed (regular file, not symlink). Post-update procedure documented in TOOLS.md."
     }
   ]
 }
