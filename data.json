@@ -7,7 +7,7 @@
       "progress": 100,
       "lastUpdate": "2026-03-03T15:05:00+04:00",
       "tags": ["crypto", "production", "solved"],
-      "notes": "Issue: 4-5 min dead windows between alert bursts (5-min cooldown synchronized). Fix: (1) Cooldown 60s→120s, (2) Self-healing watchdog (3 silent cycles=reset), (3) DEX null fix. Result: Zero dead windows, auto-heals on failure. TUNED: Threshold raised 45→55. Now 7 alerts/cycle (quality only). Thresholds: Jason 55 (MEDIUM+), GOD Signal 60 (MEDIUM+)"
+      "notes": "Issue: 4-5 min dead windows + noisy alerts. Fix: (1) Cooldown 120s, (2) Self-healing watchdog, (3) DEX null fix. TUNED: Threshold 45→55. Result: 7 alerts/cycle (quality only), zero dead windows, auto-heals. Thresholds: Jason 55 (MEDIUM+), GOD 60 (MEDIUM+)"
     },
     {
       "id": "crypto-signals-win-rate-tracker",
@@ -25,7 +25,7 @@
       "progress": 15,
       "dueDate": "2026-03-10T23:59:00+04:00",
       "tags": ["crypto", "roadmap", "architecture"],
-      "notes": "Phase 1 complete (all critical issues fixed). Phase 2-4 awaiting Jason: (2) Win rate dashboard + macro filter, (3) OKX/Bybit funding + whale tracking, (4) Event-driven architecture + tiered cadence"
+      "notes": "Phase 1 complete (all critical issues fixed, threshold tuned). Phase 2-4 awaiting Jason: (2) Win rate dashboard + macro filter, (3) OKX/Bybit funding + whale tracking, (4) Event-driven architecture + tiered cadence"
     }
   ],
   "onHold": [
@@ -49,10 +49,10 @@
   "infrastructure": [
     {
       "id": "pm2-crypto-engines",
-      "title": "PM2 — Crypto Engines FIRING CONTINUOUSLY",
+      "title": "PM2 — Crypto Engines FIRING QUALITY SIGNALS",
       "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T11:14:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's: 18 alerts/cycle, 120s cooldown, self-healing watchdog. GOD: 4-7 alerts/cycle. Win rate tracking active."
+      "lastUpdate": "2026-03-03T15:05:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's: 7 alerts/cycle (threshold 55), 120s cooldown, watchdog armed. GOD: 4-7 alerts/cycle (threshold 60). Win rate: 31% accuracy, auto-tracking."
     },
     {
       "id": "gemini-cli-wrapper",
