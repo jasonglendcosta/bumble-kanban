@@ -1,13 +1,13 @@
 {
   "active": [
     {
-      "id": "jasons-crypto-config-tuned",
-      "title": "✅ Jason's Crypto Signals — Config Optimized",
+      "id": "tradingview-research-complete",
+      "title": "✅ TradingView Research — 2-Part Deep Dive DELIVERED",
       "status": "COMPLETE",
       "progress": 100,
-      "lastUpdate": "2026-03-03T18:50:00+04:00",
-      "tags": ["crypto", "production", "solved"],
-      "notes": "Threshold 45→55, data source restored to top 50 by volume. Result: 41 Binance matches, 4 quality alerts/cycle (SOL, KITE, NEAR, XPL). Eliminated noise tokens. 120s cooldown, self-healing watchdog armed."
+      "lastUpdate": "2026-03-03T21:39:00+04:00",
+      "tags": ["research", "crypto-signals", "tradingview", "strategy"],
+      "notes": "Comprehensive research on TradingView subscriptions + pricing by region + promo codes. Recommendation: Premium ($56.49/mo) for webhooks, 800 alerts, deep backtesting, chart patterns. Best deal NOW: Turkey VPN + TRADE15 = $250-300/yr. Best deal EVER: Black Friday + VPN = $80-150/yr. Reports sent to Telegram."
     },
     {
       "id": "crypto-signals-win-rate-tracker",
@@ -25,7 +25,7 @@
       "progress": 15,
       "dueDate": "2026-03-10T23:59:00+04:00",
       "tags": ["crypto", "roadmap", "architecture"],
-      "notes": "Phase 1 complete. Awaiting: Phase 2 (win rate dashboard), Phase 3 (OKX/Bybit funding), Phase 4 (event-driven)"
+      "notes": "Phase 1 complete. Awaiting: Phase 2 (win rate dashboard), Phase 3 (OKX/Bybit funding), Phase 4 (event-driven). TradingView Premium upgrade (webhooks + backtesting) would accelerate all phases."
     }
   ],
   "onHold": [
