@@ -2,12 +2,12 @@
   "active": [
     {
       "id": "jasons-crypto-permanent-fix",
-      "title": "✅ Jason's Crypto Signals — FINAL FIX DEPLOYED",
+      "title": "✅ Jason's Crypto Signals — FINAL FIX + THRESHOLD TUNED",
       "status": "COMPLETE",
       "progress": 100,
-      "lastUpdate": "2026-03-03T11:14:00+04:00",
+      "lastUpdate": "2026-03-03T15:05:00+04:00",
       "tags": ["crypto", "production", "solved"],
-      "notes": "Issue: 4-5 min dead windows between alert bursts (5-min cooldown synchronized). Fix: (1) Cooldown 60s→120s, (2) Self-healing watchdog (3 silent cycles=reset), (3) DEX null fix. Result: 18 alerts/cycle, zero dead windows, auto-heals on failure. Whale signals flowing. Thresholds: Jason 45+, GOD Signal 60+"
+      "notes": "Issue: 4-5 min dead windows between alert bursts (5-min cooldown synchronized). Fix: (1) Cooldown 60s→120s, (2) Self-healing watchdog (3 silent cycles=reset), (3) DEX null fix. Result: Zero dead windows, auto-heals on failure. TUNED: Threshold raised 45→55. Now 7 alerts/cycle (quality only). Thresholds: Jason 55 (MEDIUM+), GOD Signal 60 (MEDIUM+)"
     },
     {
       "id": "crypto-signals-win-rate-tracker",
