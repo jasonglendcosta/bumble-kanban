@@ -1,30 +1,70 @@
 {
   "active": [
     {
+      "id": "crypto-dashboard-futures-2026-03-04",
+      "title": "✅ CRYPTO DASHBOARD — FUTURES TRADING + P&L FIXED",
+      "status": "COMPLETE",
+      "progress": 100,
+      "lastUpdate": "2026-03-04T21:50:00+04:00",
+      "tags": [
+        "dashboard",
+        "futures",
+        "bug-fix",
+        "production"
+      ],
+      "notes": "Full Binance Futures support added: 7 new functions (account, positions, trades, funding, orders), proxy routing (/fapi/ → fapi.binance.com), dual-market UI (violet/cyan), LONG/SHORT badges, leverage display, liq warnings. BNB fee calculation fixed (was 84x overestimate). Funding fees added to net P&L. Cancelled orders removed. Live at https://crypto-dashboard-wheat-five.vercel.app"
+    },
+    {
+      "id": "usdc-removal-godSignal-2026-03-04",
+      "title": "\u2705 GOD SIGNAL \u2014 USDC + Stablecoins REMOVED",
+      "status": "COMPLETE",
+      "progress": 100,
+      "lastUpdate": "2026-03-04T18:14:00+04:00",
+      "tags": [
+        "crypto",
+        "bug-fix",
+        "production"
+      ],
+      "notes": "DEXScanner + SmartMoneyScanner stablecoin filter bugs fixed. USDC, USDT, DAI, BUSD, TUSD now completely blocked from signal stream. Engine restarted, verified clean."
+    },
+    {
       "id": "tradingview-research-complete",
-      "title": "✅ TradingView Research — COMPLETE + GEMINI VALIDATED",
+      "title": "\u2705 TradingView Research \u2014 COMPLETE + GEMINI VALIDATED",
       "status": "COMPLETE",
       "progress": 100,
       "lastUpdate": "2026-03-03T22:39:00+04:00",
-      "tags": ["research", "crypto-signals", "tradingview", "strategy"],
+      "tags": [
+        "research",
+        "crypto-signals",
+        "tradingview",
+        "strategy"
+      ],
       "notes": "2-part research (web scrape + Gemini CLI) complete. Key findings: Easter sale (Apr) = 70% off Premium (~$180/yr), Cancel Renewal trick = 50% off, Subscription stacking = 13 month extensions. Recommendation: Buy at Easter sale, stack at Black Friday = $14/month effective. 4 Telegram reports sent."
     },
     {
       "id": "crypto-signals-win-rate-tracker",
-      "title": "🎯 Crypto Signals — Win Rate Tracker LIVE",
+      "title": "\ud83c\udfaf Crypto Signals \u2014 Win Rate Tracker LIVE",
       "status": "ACTIVE",
       "progress": 100,
       "lastUpdate": "2026-03-03T08:54:00+04:00",
-      "tags": ["crypto", "metrics", "production"],
+      "tags": [
+        "crypto",
+        "metrics",
+        "production"
+      ],
       "notes": "Win rate tracking deployed, resolving outcomes continuously. ~31% accuracy baseline. Phase 2 (dashboard) awaiting approval."
     },
     {
       "id": "crypto-signals-1000x-plan",
-      "title": "🚀 Crypto Signals — 1000x Improvement (Phase 2-4)",
+      "title": "\ud83d\ude80 Crypto Signals \u2014 1000x Improvement (Phase 2-4)",
       "status": "PENDING",
       "progress": 15,
       "dueDate": "2026-03-10T23:59:00+04:00",
-      "tags": ["crypto", "roadmap", "architecture"],
+      "tags": [
+        "crypto",
+        "roadmap",
+        "architecture"
+      ],
       "notes": "Phase 1 complete. TradingView Premium upgrade (webhooks + backtesting) would accelerate all phases. Best pricing: Wait for Easter sale (April) at 70% off."
     }
   ],
@@ -47,14 +87,14 @@
   "infrastructure": [
     {
       "id": "pm2-crypto-engines",
-      "title": "PM2 — Crypto Engines FIRING (Top 50 by Volume)",
-      "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T18:50:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both online. Jason's: 4 alerts/cycle, 120s cooldown, 55+ threshold, top 50 by volume. Watchdog armed."
+      "title": "PM2 \u2014 Crypto Engines PAUSED (Jason's Order Feb 27)",
+      "status": "PAUSED",
+      "lastUpdate": "2026-03-05T09:22:00+04:00",
+      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both stopped per Jason's Feb 27 order. To resume: pm2 start 1 7 && pm2 save"
     },
     {
       "id": "gemini-cli-wrapper",
-      "title": "Gemini CLI — v0.31.0 + NODE_OPTIONS Wrapper",
+      "title": "Gemini CLI \u2014 v0.31.0 + NODE_OPTIONS Wrapper",
       "status": "ACTIVE",
       "lastUpdate": "2026-03-03T09:07:00+04:00"
     }
