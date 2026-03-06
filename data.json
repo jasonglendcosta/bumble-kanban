@@ -1,102 +1,78 @@
 {
-  "active": [
+  "updated": "2026-03-06T13:51:00+04:00",
+  "in_progress": [
     {
-      "id": "crypto-dashboard-futures-2026-03-04",
-      "title": "✅ CRYPTO DASHBOARD — FUTURES TRADING + P&L FIXED",
-      "status": "COMPLETE",
-      "progress": 100,
-      "lastUpdate": "2026-03-04T21:50:00+04:00",
-      "tags": [
-        "dashboard",
-        "futures",
-        "bug-fix",
-        "production"
-      ],
-      "notes": "Full Binance Futures support added: 7 new functions (account, positions, trades, funding, orders), proxy routing (/fapi/ → fapi.binance.com), dual-market UI (violet/cyan), LONG/SHORT badges, leverage display, liq warnings. BNB fee calculation fixed (was 84x overestimate). Funding fees added to net P&L. Cancelled orders removed. Live at https://crypto-dashboard-wheat-five.vercel.app"
+      "id": "tv-browser-relay",
+      "title": "OpenClaw Browser Relay Extension — Load into Chrome",
+      "status": "blocked",
+      "started": "2026-03-05T23:44:00+04:00",
+      "elapsed": "8h+ (may have stalled)",
+      "tool": "Clawd Cursor",
+      "priority": "urgent",
+      "notes": "Installation appears stalled. Fallback: Manual GOD Composite setup (10 min, guide ready). Status needs verification."
     },
     {
-      "id": "usdc-removal-godSignal-2026-03-04",
-      "title": "\u2705 GOD SIGNAL \u2014 USDC + Stablecoins REMOVED",
-      "status": "COMPLETE",
-      "progress": 100,
-      "lastUpdate": "2026-03-04T18:14:00+04:00",
-      "tags": [
-        "crypto",
-        "bug-fix",
-        "production"
-      ],
-      "notes": "DEXScanner + SmartMoneyScanner stablecoin filter bugs fixed. USDC, USDT, DAI, BUSD, TUSD now completely blocked from signal stream. Engine restarted, verified clean."
-    },
-    {
-      "id": "tradingview-research-complete",
-      "title": "\u2705 TradingView Research \u2014 COMPLETE + GEMINI VALIDATED",
-      "status": "COMPLETE",
-      "progress": 100,
-      "lastUpdate": "2026-03-03T22:39:00+04:00",
-      "tags": [
-        "research",
-        "crypto-signals",
-        "tradingview",
-        "strategy"
-      ],
-      "notes": "2-part research (web scrape + Gemini CLI) complete. Key findings: Easter sale (Apr) = 70% off Premium (~$180/yr), Cancel Renewal trick = 50% off, Subscription stacking = 13 month extensions. Recommendation: Buy at Easter sale, stack at Black Friday = $14/month effective. 4 Telegram reports sent."
-    },
-    {
-      "id": "crypto-signals-win-rate-tracker",
-      "title": "\ud83c\udfaf Crypto Signals \u2014 Win Rate Tracker LIVE",
-      "status": "ACTIVE",
-      "progress": 100,
-      "lastUpdate": "2026-03-03T08:54:00+04:00",
-      "tags": [
-        "crypto",
-        "metrics",
-        "production"
-      ],
-      "notes": "Win rate tracking deployed, resolving outcomes continuously. ~31% accuracy baseline. Phase 2 (dashboard) awaiting approval."
-    },
-    {
-      "id": "crypto-signals-1000x-plan",
-      "title": "\ud83d\ude80 Crypto Signals \u2014 1000x Improvement (Phase 2-4)",
-      "status": "PENDING",
-      "progress": 15,
-      "dueDate": "2026-03-10T23:59:00+04:00",
-      "tags": [
-        "crypto",
-        "roadmap",
-        "architecture"
-      ],
-      "notes": "Phase 1 complete. TradingView Premium upgrade (webhooks + backtesting) would accelerate all phases. Best pricing: Wait for Easter sale (April) at 70% off."
+      "id": "gemini-api-quota",
+      "title": "Gemini API Free Tier Quota Exhaustion",
+      "status": "blocking",
+      "issue": "Both morning crons (6 AM stock scan + 7:30 AM brief) hit 429 limits",
+      "impact": "Morning automation workflows unavailable at peak hours",
+      "options": [
+        "Option A: Upgrade to Gemini API paid tier ($20/mo)",
+        "Option B: Hybrid — keep Gemini CLI for off-peak, use Tavily/Perplexity for mornings",
+        "Option C: Delay morning brief to 8+ AM when quota resets"
+      ]
     }
   ],
-  "onHold": [
+  "completed_today": [
     {
-      "id": "apex-platform",
-      "title": "APEX Platform",
-      "status": "HOLD",
-      "progress": 100,
-      "lastUpdate": "2026-02-16"
+      "id": "whale-scanner-accuracy",
+      "title": "Whale Scanner Buy/Sell Direction Accuracy Fix",
+      "completed": "2026-03-06T13:28:00+04:00",
+      "impact": "Both engines (GOD Signal + Jason's Signals) now use real aggTrade taker flow instead of lagging 24h price change. 100% accuracy.",
+      "files": [
+        "~/clawd/repos/god-signal/main.py",
+        "~/clawd/repos/jasons-crypto-signals/main.py"
+      ]
     },
     {
-      "id": "god-trader",
-      "title": "GOD TRADER",
-      "status": "HOLD",
-      "progress": 90,
-      "lastUpdate": "2026-02-27"
+      "id": "jasons-signals-watchdog",
+      "title": "Jason's Signals Watchdog State Reset Fix",
+      "completed": "2026-03-06T13:51:00+04:00",
+      "impact": "Engine was frozen (0 alerts for 40+ cycles). Watchdog now clears _previous_states, signals flowing normally again.",
+      "fix": "Added force_state_reset flag to TelegramAlerter, engine clears state-change tracking on watchdog fire"
+    },
+    {
+      "id": "tv-time-scoring",
+      "title": "Time-Based Scoring Deploy",
+      "completed": "2026-03-05T20:15:00+04:00",
+      "impact": "1.25x EU/US overlap multiplier LIVE, +15% funding cycle boost, weekend filter 0.80-0.90x"
     }
   ],
-  "infrastructure": [
+  "blocked": [
     {
-      "id": "pm2-crypto-engines",
-      "title": "PM2 \u2014 Crypto Engines PAUSED (Jason's Order Feb 27)",
-      "status": "PAUSED",
-      "lastUpdate": "2026-03-05T09:22:00+04:00",
-      "notes": "god-signal (id 1) + jasons-crypto-signals (id 7) both stopped per Jason's Feb 27 order. To resume: pm2 start 1 7 && pm2 save"
+      "id": "tv-400-alerts",
+      "title": "400 TradingView Alerts Configuration",
+      "blocker": "Browser Relay install stalled (may need restart). Manual fallback ready.",
+      "option_a": "Restart/verify Browser Relay extension (if still needed)",
+      "option_b": "Manually setup GOD Composite on BTC/ETH/SOL (10 min, guide already sent to Telegram)"
     },
     {
-      "id": "gemini-cli-wrapper",
-      "title": "Gemini CLI \u2014 v0.31.0 + NODE_OPTIONS Wrapper",
-      "status": "ACTIVE",
-      "lastUpdate": "2026-03-03T09:07:00+04:00"
+      "id": "apex-deployment",
+      "title": "APEX Platform Go-Live",
+      "status": "ready",
+      "blocker": "Awaiting Jason decision: UI-only (Vercel) or full backend (Supabase)?",
+      "ready_since": "2026-02-16",
+      "components": "All UI built, all pages functional, zero TS errors, Strategy Theme applied"
+    }
+  ],
+  "next": [
+    {
+      "id": "wait-browser-relay",
+      "title": "Wait for Clawd Cursor to finish extension load",
+      "then": "Set gateway token in extension options (a8995349...)",
+      "then_2": "Click extension on TradingView tab",
+      "then_3": "Extension controls auto-setup of 400 alerts"
     }
   ]
 }
