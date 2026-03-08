@@ -1,30 +1,35 @@
 {
-  "updated": "2026-03-06T13:51:00+04:00",
+  "updated": "2026-03-08T14:37:00+04:00",
   "in_progress": [
     {
-      "id": "tv-browser-relay",
-      "title": "OpenClaw Browser Relay Extension — Load into Chrome",
-      "status": "blocked",
-      "started": "2026-03-05T23:44:00+04:00",
-      "elapsed": "8h+ (may have stalled)",
-      "tool": "Clawd Cursor",
-      "priority": "urgent",
-      "notes": "Installation appears stalled. Fallback: Manual GOD Composite setup (10 min, guide ready). Status needs verification."
+      "id": "tv-scanner-optimus",
+      "title": "TradingView Integration — Optimus Server-Side Scanner",
+      "status": "in_progress",
+      "started": "2026-03-05T18:39:00+04:00",
+      "completed": "2026-03-06T20:00:00+04:00",
+      "tool": "TradingView MCP + Node.js",
+      "priority": "high",
+      "notes": "Optimus pivoted from browser alerts to server-side scanner (god-signal-scanner.js). Scans 20 coins via MCP, evals GOD Composite conditions, fires webhook. Zero TV Premium needed. First scan: all 20 coins bearish, correct behavior. Pending: tunnel stability fix (ephemeral Cloudflare URL → named tunnel)."
     },
-    {
-      "id": "gemini-api-quota",
-      "title": "Gemini API Free Tier Quota Exhaustion",
-      "status": "blocking",
-      "issue": "Both morning crons (6 AM stock scan + 7:30 AM brief) hit 429 limits",
-      "impact": "Morning automation workflows unavailable at peak hours",
-      "options": [
-        "Option A: Upgrade to Gemini API paid tier ($20/mo)",
-        "Option B: Hybrid — keep Gemini CLI for off-peak, use Tavily/Perplexity for mornings",
-        "Option C: Delay morning brief to 8+ AM when quota resets"
-      ]
-    }
+
   ],
   "completed_today": [
+    {
+      "id": "cron-timezone-fix",
+      "title": "Cron Timezone Bug Fix — Morning Brief + Stock Scan",
+      "completed": "2026-03-08T10:25:00+04:00",
+      "issue": "Morning Brief set to 0 7 UTC (11:00 AM Dubai, not 7:30 AM). Stock Scan missing from crontab.",
+      "fix": "Updated crontab: Morning Brief → 30 3 UTC (7:30 AM Dubai), Stock Scan → 0 2 UTC (6:00 AM Dubai)",
+      "impact": "Both jobs now execute at correct times. Verified working."
+    },
+    {
+      "id": "coingecko-api-audit",
+      "title": "CoinGecko API Architecture Audit",
+      "completed": "2026-03-08T14:37:00+04:00",
+      "request": "Analyze no. of API calls, purposes, and importance across both signals",
+      "findings": "GOD Signal: 43K/day, Jason's: 17K/day, Combined: 60K/day at 42/min (within 500/min limit). PriceScanner redundant (prices overridden by Binance). CategoryRotationScanner has poor signal-to-cost.",
+      "recommendation": "Kill PriceScanner calls immediately. Evaluate CategoryRotationScanner for deprecation. Most critical data already from Binance direct API."
+    },
     {
       "id": "whale-scanner-accuracy",
       "title": "Whale Scanner Buy/Sell Direction Accuracy Fix",
@@ -41,12 +46,6 @@
       "completed": "2026-03-06T13:51:00+04:00",
       "impact": "Engine was frozen (0 alerts for 40+ cycles). Watchdog now clears _previous_states, signals flowing normally again.",
       "fix": "Added force_state_reset flag to TelegramAlerter, engine clears state-change tracking on watchdog fire"
-    },
-    {
-      "id": "tv-time-scoring",
-      "title": "Time-Based Scoring Deploy",
-      "completed": "2026-03-05T20:15:00+04:00",
-      "impact": "1.25x EU/US overlap multiplier LIVE, +15% funding cycle boost, weekend filter 0.80-0.90x"
     }
   ],
   "blocked": [
