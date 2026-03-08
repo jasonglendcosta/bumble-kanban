@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-08T14:55:00+04:00",
+  "updated": "2026-03-08T15:10:00+04:00",
   "in_progress": [
     {
       "id": "tv-scanner-optimus",
@@ -38,6 +38,20 @@
       "fix": "Ran `codex auth login`, Jason opened browser auth URL, signed in with OpenAI account",
       "result": "openai-codex:default token now valid for 10d. Megatron routes to GPT-5.4 on next message.",
       "impact": "Model fallback issue resolved ✅"
+    },
+    {
+      "id": "megatron-discord-setup",
+      "title": "Megatron Discord Multi-Account Setup — DEPLOYED",
+      "completed": "2026-03-08T15:10:00+04:00",
+      "what_happened": "Jason created new Discord bot for Megatron, provided token. Bumble's config auto-migrated to accounts.default. Both bots now live and working.",
+      "setup": [
+        "Configured channels.discord.accounts.megatron.token",
+        "Bound megatron agent to discord:megatron account",
+        "Gateway restart — both Discord bots online"
+      ],
+      "status": "✅ Deployed — Both bots working (audit ok)",
+      "next": "Jason invites @Megatron to Discord server via OAuth2 URL. Once joined, DMs/mentions route to GPT-5.4.",
+      "impact": "Megatron now accessible via Discord (same as Telegram)"
     },
     {
       "id": "whale-scanner-accuracy",
