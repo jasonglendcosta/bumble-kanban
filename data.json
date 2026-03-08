@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-08T14:37:00+04:00",
+  "updated": "2026-03-08T14:55:00+04:00",
   "in_progress": [
     {
       "id": "tv-scanner-optimus",
@@ -29,6 +29,15 @@
       "request": "Analyze no. of API calls, purposes, and importance across both signals",
       "findings": "GOD Signal: 43K/day, Jason's: 17K/day, Combined: 60K/day at 42/min (within 500/min limit). PriceScanner redundant (prices overridden by Binance). CategoryRotationScanner has poor signal-to-cost.",
       "recommendation": "Kill PriceScanner calls immediately. Evaluate CategoryRotationScanner for deprecation. Most critical data already from Binance direct API."
+    },
+    {
+      "id": "megatron-openai-auth",
+      "title": "Megatron OpenAI Token Re-Auth Fix",
+      "completed": "2026-03-08T14:51:00+04:00",
+      "issue": "Megatron falling back to Opus 4.6 instead of GPT-5.4. OpenAI refresh token dead (already used).",
+      "fix": "Ran `codex auth login`, Jason opened browser auth URL, signed in with OpenAI account",
+      "result": "openai-codex:default token now valid for 10d. Megatron routes to GPT-5.4 on next message.",
+      "impact": "Model fallback issue resolved ✅"
     },
     {
       "id": "whale-scanner-accuracy",
@@ -66,6 +75,23 @@
     }
   ],
   "next": [
+    {
+      "id": "discord-megatron-bot",
+      "title": "Add Megatron Bot to Discord",
+      "status": "awaiting-jason",
+      "what_jason_does": [
+        "Create new Discord bot @ discord.com/developers/applications (name: Megatron)",
+        "Reset token, enable Message Content Intent",
+        "OAuth2 → URL Generator → invite to server",
+        "Give token to Bumble"
+      ],
+      "what_bumble_does": [
+        "Configure channels.discord.accounts.megatron with token",
+        "Bind Megatron agent to accountId=megatron",
+        "Restart gateway"
+      ],
+      "pattern": "Same as Telegram multi-account — separate bot, separate account, separate agent routing"
+    },
     {
       "id": "wait-browser-relay",
       "title": "Wait for Clawd Cursor to finish extension load",
